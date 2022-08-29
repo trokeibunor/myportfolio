@@ -23,7 +23,7 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     margin: 0px auto;
-    padding: 1rem 0px;
+    padding: 2rem 0px 0rem;
     img {
       max-height: 32px;
       max-width: 153px;

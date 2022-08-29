@@ -31,11 +31,18 @@
         <img src="../components/icons/image_calling.svg" alt="" srcset="" />
       </div>
     </section>
+    <div class="name-divider">
+      <img src="../components/icons/name-divider.svg" alt="" srcset="">
+    </div>
+    <section class="about">
+      <AboutSect/>
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
 import NavBar from "../components/NavBar.vue";
+import AboutSect from "../components/AboutSect.vue"
 </script>
 
 <style lang="scss">
@@ -46,6 +53,20 @@ $main-font: "Montserrat", sans-serif;
 body {
   background-color: $dark-background;
   font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0px;
+}
+// style scrollbar
+body::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #181035;
 }
 .hero {
   display: grid;
@@ -136,11 +157,21 @@ body {
   .image-section {
     grid-area: image;
     height: 90vh;
+    background-image: url("../components/icons/blurry-background.svg");
+    background-position: top 75%;
     img {
       width: 100%;
       height: auto;
       object-fit: cover;
     }
   }
+}
+.name-divider{
+  position: relative;
+  z-index: -1;
+  img{
+    max-width: 100%;
+  }
+  
 }
 </style>
