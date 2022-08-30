@@ -12,7 +12,7 @@
   <GigsCarousel/>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import GigsCarousel from "./GigsCarousel.vue";
 </script>
 

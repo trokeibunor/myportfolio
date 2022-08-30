@@ -44,7 +44,7 @@
     /></swiper-slide>
   </swiper>
 </template>
-<script>
+<script lang="ts">
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 
