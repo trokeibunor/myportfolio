@@ -36,6 +36,10 @@
           <p>Football</p>
           <p>Reading</p>
         </div>
+        <a id="downloadCV" href="#" target="_blank" rel="noopener noreferrer">
+            <img src="../components/icons/cloud_download.svg" alt="" />
+            <span>Download CV</span>
+          </a>
       </div>
     </div>
   </div>
@@ -96,7 +100,7 @@
       .enjoyables {
         display: flex;
         flex-direction: row;
-        gap: 8px;
+        gap: 12px;
         margin: 1rem 0px;
         p {
           border: 1px solid #fff;

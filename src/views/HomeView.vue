@@ -32,17 +32,24 @@
       </div>
     </section>
     <div class="name-divider">
-      <img src="../components/icons/name-divider.svg" alt="" srcset="">
+      <img src="../components/icons/name-divider.svg" alt="" srcset="" />
     </div>
     <section class="about">
-      <AboutSect/>
+      <AboutSect />
+      <div class="name-divider">
+        <img src="../components/icons/name-divider.svg" alt="" srcset="" />
+      </div>
+    </section>
+    <section class="skills">
+      <SkillsSect />
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
 import NavBar from "../components/NavBar.vue";
-import AboutSect from "../components/AboutSect.vue"
+import AboutSect from "../components/AboutSect.vue";
+import SkillsSect from "../components/SkillsSect.vue"
 </script>
 
 <style lang="scss">
@@ -60,13 +67,34 @@ body {
 body::-webkit-scrollbar {
   width: 1em;
 }
- 
+
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 body::-webkit-scrollbar-thumb {
   background-color: #181035;
+}
+#downloadCV {
+  img {
+    margin: none !important;
+    width: 16px;
+  }
+  span {
+    margin: none !important;
+    font-size: 16px;
+  }
+  font-family: $main-font;
+  background-color: $purple;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 30px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
 }
 .hero {
   display: grid;
@@ -103,7 +131,7 @@ body::-webkit-scrollbar-thumb {
       font-size: 64px;
       font-weight: bold;
       margin: 0px;
-      width: 120%
+      width: 120%;
     }
     #desc {
       font-family: "Monstserrat", sans-serif;
@@ -116,27 +144,6 @@ body::-webkit-scrollbar-thumb {
       flex-direction: row;
       gap: 24px;
       margin: 4rem 0px 1rem 0px;
-      #downloadCV {
-        img {
-          margin: none !important;
-          width: 16px;
-        }
-        span {
-          margin: none !important;
-          font-size: 16px;
-        }
-        font-family: $main-font;
-        background-color: $purple;
-        width: fit-content;
-        height: fit-content;
-        border-radius: 30px;
-        padding: 8px 16px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: #fff;
-        text-decoration: none;
-      }
       #scroll {
         font-family: $main-font;
         text-decoration: none;
@@ -166,12 +173,12 @@ body::-webkit-scrollbar-thumb {
     }
   }
 }
-.name-divider{
+.name-divider {
   position: relative;
+  bottom: 10px;
   z-index: -1;
-  img{
+  img {
     max-width: 100%;
   }
-  
 }
 </style>

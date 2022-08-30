@@ -17,13 +17,18 @@ $light-background: #f2f2f2;
 $dark-background: #111216;
 nav {
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: $dark-background;
+  
   .nav-content {
     width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0px auto;
-    padding: 2rem 0px 0rem;
+    padding: 1rem 0px;
     img {
       max-height: 32px;
       max-width: 153px;
