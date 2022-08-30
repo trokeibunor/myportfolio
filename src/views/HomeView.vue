@@ -52,6 +52,9 @@
       </div>
       <WorksSect/>
     </section>
+    <section class="testimonial">
+      <TestimonialSect/>
+    </section>
   </div>
 </template>
 
@@ -61,6 +64,7 @@ import AboutSect from "../components/AboutSect.vue";
 import SkillsSect from "../components/SkillsSect.vue";
 import AchieveSect from "@/components/AchieveSect.vue";
 import WorksSect from "@/components/WorksSect.vue";
+import TestimonialSect from "../components/TestimonialSect.vue";
 </script>
 
 <style lang="scss">
@@ -73,6 +77,7 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0px;
+  overflow-x: hidden;
 }
 // style scrollbar
 body::-webkit-scrollbar {
