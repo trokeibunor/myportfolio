@@ -43,13 +43,17 @@
     <section class="skills">
       <SkillsSect />
     </section>
+    <section class="achieve">
+      <AchieveSect />
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
 import NavBar from "../components/NavBar.vue";
 import AboutSect from "../components/AboutSect.vue";
-import SkillsSect from "../components/SkillsSect.vue"
+import SkillsSect from "../components/SkillsSect.vue";
+import AchieveSect from "@/components/AchieveSect.vue";
 </script>
 
 <style lang="scss">
@@ -175,7 +179,7 @@ body::-webkit-scrollbar-thumb {
 }
 .name-divider {
   position: relative;
-  bottom: 10px;
+  bottom: 0px;
   z-index: -1;
   img {
     max-width: 100%;
