@@ -59,6 +59,7 @@
         <ProgressBar title="Javascript" width="90" />
         <ProgressBar title="React" width="60" />
         <ProgressBar title="Vue" width="90" />
+        <ProgressBar title="AdonisJs" width="50" />
       </div>
       <div v-if="clickedBox == 'backend'" class="backend-box">
         <ProgressBar title="Nodejs/Express" width="80" />

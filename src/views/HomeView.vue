@@ -46,6 +46,12 @@
     <section class="achieve">
       <AchieveSect />
     </section>
+    <section class="works">
+      <div class="name-divider">
+        <img src="../components/icons/name-divider.svg" alt="" srcset="" />
+      </div>
+      <WorksSect/>
+    </section>
   </div>
 </template>
 
@@ -54,6 +60,7 @@ import NavBar from "../components/NavBar.vue";
 import AboutSect from "../components/AboutSect.vue";
 import SkillsSect from "../components/SkillsSect.vue";
 import AchieveSect from "@/components/AchieveSect.vue";
+import WorksSect from "@/components/WorksSect.vue";
 </script>
 
 <style lang="scss">

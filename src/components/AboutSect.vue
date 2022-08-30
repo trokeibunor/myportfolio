@@ -16,14 +16,14 @@
       <div class="text-grid">
         <h3>Get to know Emmanuel Okeibunor</h3>
         <p>
-          I’ve been into coding and designing since i was 16. I have designed
-          and developed lots of amzing products etc. I’m very much farmilia with
-          these tools and many more :
+          I’ve been into coding and designing since i was 18. I have designed
+          and developed lots of amzing products etc. I’m very much familiar with
+          these tools and many more.
         </p>
         <p>
-          I’ve been into coding and designing since i was 16. I have designed
-          and developed lots of amzing products etc. I’m very much farmilia with
-          these tools and many more :
+          I love football, Up Chelsea, lol. I enjoy interesting conversations,
+          learning new things, civil debates. I enjoy new challanges. I'm sure
+          I'll enjoy talking with you about your project, well find out more in my CV I guess.
         </p>
         <div id="sect_title">
           <img src="../components/icons/port-divider.svg" alt="" srcset="" />
@@ -37,9 +37,9 @@
           <p>Reading</p>
         </div>
         <a id="downloadCV" href="#" target="_blank" rel="noopener noreferrer">
-            <img src="../components/icons/cloud_download.svg" alt="" />
-            <span>Download CV</span>
-          </a>
+          <img src="../components/icons/cloud_download.svg" alt="" />
+          <span>Download CV</span>
+        </a>
       </div>
     </div>
   </div>

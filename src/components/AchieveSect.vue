@@ -2,7 +2,7 @@
   <div id="achieve">
     <div class="title">
       <img src="../components/icons/port-divider.svg" alt="" srcset="" />
-      <p>NOTABLE ACHIEVEMENTS</p>
+      <p>CERTIFICATION/ CAREER HIGHLIGHTS</p>
     </div>
     <div class="content">
       <div class="education-box">
