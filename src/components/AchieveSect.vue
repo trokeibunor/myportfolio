@@ -37,6 +37,11 @@
           <p>Udemy Certicication</p>
           <p>2022</p>
         </div>
+        <div class="info-box">
+          <h5>Design Thinking: The fundamentals</h5>
+          <p>Udemy Certicication</p>
+          <p>2022</p>
+        </div>
       </div>
       <div class="work-box">
         <img src="../components/icons/work_icon.svg" alt="" srcset="" />
@@ -144,6 +149,43 @@
       border: 1px solid #fff;
       border-radius: 50%;
       padding: 16px 18px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  // mobile
+  #achieve{
+    width: 90%;
+    .title{
+      img{
+        max-width: 75px;
+      }
+    }
+    .content{
+      div{
+        margin: 2rem 0px;
+        img{
+          width: 60%;
+          height: 100px;
+        }
+        .info-box{
+          width: 98%;
+          gap: 4px;
+          h5{
+            font-size: 10px;
+          }
+          p{
+            font-size: 8px;
+          }
+        }
+      }
+    }
+    .see_through{
+      p{
+        font-size: 8px;
+        text-align: center;
+        padding: 8px 10px;
+      }
     }
   }
 }

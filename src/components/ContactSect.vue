@@ -134,4 +134,51 @@
     }
   }
 }
+@media screen and (max-width: 1024px){
+  // tablet
+  #contacts{
+    .toaster{
+      h3{
+        width: 70%
+      }
+    }
+    .contact-holder{
+      form{
+        width: 70%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  #contacts{
+    width: 90%;
+    .title{
+      img{
+        max-width: 120px;
+      }
+    }
+    .toaster{
+      justify-content: center;
+      h3{
+        text-align: center;
+        width: 100%;
+        font-size: 18px;
+      }
+    }
+    .contact-holder{
+      flex-direction: column-reverse;
+      gap: 16px;
+      .icon-stack{
+        flex-direction: row;
+      }
+      form{
+        width: 100%;
+        padding: 1.5rem 0px;
+        input,textarea{
+          width: 85%;
+        }
+      }
+    }
+  }
+}
 </style>

@@ -30,8 +30,23 @@ import TestimonialCarousel from "./TestimonialCarousel.vue";
     }
   }
 }
+
 .card-holder{
   width: 80%;
   margin: 0px auto;
+}
+@media screen and (max-width: 768px){
+  #testimonial {
+    width: 90%;
+    .title{
+      img{
+        max-width: 150px;
+      }
+    }
+  }
+  .card-holder{
+    width: 60%;
+    margin: 0px auto;
+  }
 }
 </style>

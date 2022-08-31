@@ -44,4 +44,26 @@ const width = ref(`width: ${props.width}%`);
     }
   }
 }
+@media screen and (max-width: 768px){
+  .main{
+    padding: 0.5rem 0px;
+    .content{
+      .name{
+        font-size: 12px;
+      }
+      .bottom{
+        gap: 6px;
+      }
+      .progress-bar{
+        height: 6px;
+        .progress{
+          height: 6px;
+        }
+      }
+      p{
+        font-size: 12px;
+      }
+    }
+  }
+}
 </style>

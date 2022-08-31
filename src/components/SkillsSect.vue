@@ -119,4 +119,33 @@ const clickedBox = ref("frontend");
     }
   }
 }
+@media screen and (max-width: 1024px){
+  // Tablet
+  #skills{
+    .skill-box{
+      width: 75%;
+    }
+  }
+}
+@media screen and (max-width: 768px){
+  // mobile
+  #skills{
+    margin-top: 1rem;
+    width: 85%;
+    .control-tab{
+      div{
+        img{
+          max-width: 24px;
+        }
+        p{
+          font-size: 10px;
+        }
+      }
+    }
+    .skill-box{
+      width: 90%;
+      margin: 1rem auto;
+    }
+  }
+}
 </style>

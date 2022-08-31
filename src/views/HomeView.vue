@@ -195,6 +195,81 @@ body::-webkit-scrollbar-thumb {
     }
   }
 }
+@media screen and (max-width: 1024px){
+  // For tablet
+  .hero{
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    .text-section{
+      width: 84%;
+      grid-column: 1;
+      #welcome{
+        font-size: 12px;
+      }
+      h2{
+        font-size: 32px;
+      }
+      #desc{
+        width: 90%;
+      }
+      .btn-row{
+        gap: 12px;
+      }
+    }
+    .image-section{
+      grid-column: 2;
+      height: auto;
+    }
+  }
+}
+@media screen and (max-width: 768px){
+  // For mobile
+  .hero{
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .text-section{
+      width: 80%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      h2{
+        font-size: 28px;
+        width: 120%;
+      }
+      #desc{
+        font-size: 14px;
+      }
+      .btn-row{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+      }
+    }
+    .image-section{
+      width: 100%;
+      img{
+        width: 80%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px){
+  // Small mobile
+  .hero{
+    .text-section{
+      h2{
+        font-size: 24px;
+      }
+      #desc{
+        font-size: 12px;
+      }
+    }
+  }
+}
 .name-divider {
   position: relative;
   bottom: 0px;

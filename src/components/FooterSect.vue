@@ -75,4 +75,21 @@ nav {
     }
   }
 }
+@media screen and (max-width: 768px) {
+  // Mobile
+  #whole{
+    .inner{
+      flex-direction: column;
+    }
+  }
+  nav{
+    .nav-content{
+      padding: 1.5rem 0px;
+      .nav-link{
+      display: none;
+    }
+    }
+    
+  }
+}
 </style>

@@ -39,4 +39,23 @@ import GigsCarousel from "./GigsCarousel.vue";
     }
   }
 }
+@media screen and (max-width: 768px) {
+  // mobile
+  #works{
+    width: 90%;
+    .title{
+      img{
+        max-width: 150px;
+      }
+    }
+    .talker{
+      width: 90%;
+      margin: 1rem auto;
+      text-align: center;
+      h3{
+        font-size: 20px;
+      }
+    }
+  }
+}
 </style>

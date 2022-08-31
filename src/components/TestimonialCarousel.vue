@@ -190,4 +190,15 @@ export default {
     color: #613aff;
   }
 }
+@media screen and (max-width: 768px){
+  #testimony{
+    font-size: 10px;
+  }
+  #info{
+    font-size: 12px;
+    span{
+      font-size: 10px;
+    }
+  }
+}
 </style>

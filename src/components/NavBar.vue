@@ -49,4 +49,15 @@ nav {
     }
   }
 }
+@media screen and (max-width: 768px){
+      // mobile
+  nav{
+    .nav-content{
+      .nav-link{
+        display: none;
+      }
+    }
+  }
+}
+
 </style>
