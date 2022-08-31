@@ -55,6 +55,10 @@
     <section class="testimonial">
       <TestimonialSect/>
     </section>
+    <section class="contact">
+      <ContactSect/>
+    </section>
+    <FooterSect/>
   </div>
 </template>
 
@@ -65,6 +69,8 @@ import SkillsSect from "../components/SkillsSect.vue";
 import AchieveSect from "@/components/AchieveSect.vue";
 import WorksSect from "@/components/WorksSect.vue";
 import TestimonialSect from "../components/TestimonialSect.vue";
+import ContactSect from "../components/ContactSect.vue";
+import FooterSect from "../components/FooterSect.vue"
 </script>
 
 <style lang="scss">

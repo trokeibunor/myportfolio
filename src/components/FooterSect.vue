@@ -1,0 +1,78 @@
+<template>
+  <div id="whole">
+    <div class="inner">
+      <a href="mailto:okeibunoremma@gmail.com">
+        <img src="../components/icons/email_icon.svg" alt="" />
+        <p>okeibunoremma@gmail.com</p>
+      </a>
+      <a href="tel:+234 9015379412">
+        <img src="../components/icons/phone_icon.svg" alt="" srcset="" />
+        <p>09015379412</p>
+      </a>
+    </div>
+  </div>
+  <div class="nav-clone">
+    <nav>
+    <div class="nav-content">
+      <img src="../components/icons/dark_logo.svg" alt="" srcset="" />
+      <div class="nav-link">
+        <a href="#">Works</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <img src="../components/icons/moon_icon.svg" alt="" />
+      </div>
+    </div>
+  </nav>
+  </div>
+</template>
+
+<script setup lang="ts"></script>
+
+<style lang="scss" scoped>
+#whole {
+  width: 100%;
+  background-color: #181c28;
+  padding: 0.5rem 0px;
+  .inner {
+    width: 70%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    a {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+    }
+  }
+}
+nav {
+  width: 100%;
+  
+  .nav-content {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px auto;
+    padding: 3rem 0px;
+    img {
+      max-height: 32px;
+      max-width: 153px;
+    }
+    .nav-link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+      }
+      img {
+        max-height: 24px;
+      }
+    }
+  }
+}
+</style>
