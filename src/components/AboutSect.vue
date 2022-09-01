@@ -16,9 +16,9 @@
       <div class="text-grid">
         <h3>Get to know Emmanuel Okeibunor</h3>
         <p>
-          I’ve been into coding and designing since i was 18. I have designed
-          and developed lots of amzing products etc. I’m very much familiar with
-          these tools and many more.
+          I’ve been into coding and designing since 2019. I have designed
+          and developed lots of amzing products etc. I'm familiar with technologies
+          required for modern web development
         </p>
         <p>
           I love football, Up Chelsea, lol. I enjoy interesting conversations,

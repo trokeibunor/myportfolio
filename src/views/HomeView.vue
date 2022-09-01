@@ -10,10 +10,13 @@
         </p>
         <h2>
           My name is Emmanuel, I'm a
-          <span id="fullStack">full-stack developer</span>
+          
+            <span id="fullStack">&#128521;
+              <VueWriter :array="['Fullstack Developer', 'JAMstack Developer', 'Lover', 'Not a fighter']"/>
+            </span>
         </h2>
         <p id="desc">
-          I’ve been into coding and designing since i was 16. I have designed
+          I’ve been into coding and designing since 2019. I have designed
           and developed lots of amazing products etc.
         </p>
         <div class="btn-row">
@@ -70,7 +73,8 @@ import AchieveSect from "@/components/AchieveSect.vue";
 import WorksSect from "@/components/WorksSect.vue";
 import TestimonialSect from "../components/TestimonialSect.vue";
 import ContactSect from "../components/ContactSect.vue";
-import FooterSect from "../components/FooterSect.vue"
+import FooterSect from "../components/FooterSect.vue";
+import VueWriter from 'vue-writer';
 </script>
 
 <style lang="scss">
@@ -138,6 +142,9 @@ body::-webkit-scrollbar-thumb {
     align-content: flex-end;
     #fullStack {
       color: $purple;
+      div{
+        display: inline;
+      }
     }
     #welcome {
       display: flex;
