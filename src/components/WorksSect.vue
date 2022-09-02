@@ -1,5 +1,5 @@
 <template>
-  <div id="works">
+  <div id="works" :class="{'light-mode': !siteState.isDarkMode,'dark-mode': siteState.isDarkMode}">
     <div class="title">
       <img src="../components/icons/port-divider.svg" alt="" srcset="" />
       <p>WORKS/SERVICES</p>
@@ -14,6 +14,8 @@
 
 <script setup lang="ts">
 import GigsCarousel from "./GigsCarousel.vue";
+import { useSiteState } from "@/stores/siteState";
+const siteState = useSiteState()
 </script>
 
 <style lang="scss" scoped>
@@ -22,7 +24,6 @@ import GigsCarousel from "./GigsCarousel.vue";
   flex-direction: column;
   width: 80%;
   margin: 0px auto;
-  color: #fff;
   .title {
     display: flex;
     gap: 4px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main" :class="{'light-mode': !siteState.isDarkMode,'dark-mode': siteState.isDarkMode}">
     <div class="content">
       <div class="name">{{ props.title }}</div>
       <div class="bottom">
@@ -13,14 +13,34 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-
+import { useSiteState } from "@/stores/siteState";
+const siteState = useSiteState()
 const props = defineProps(["title", "width"]);
 const width = ref(`width: ${props.width}%`);
 </script>
 <style lang="scss" scoped>
+@import "@/Global_styles/colors.scss";
+.light-mode{
+  border: 1px solid #181c283a;
+  .content{
+    .name{
+      color: $dark_text
+    }
+    .progress-bar{
+      background-color: $alt_light;
+    }
+  }
+}
+.dark-mode{
+  border: 1px solid $white_text;
+  .content{
+    .progress-bar{
+    background-color: $alt_dark;
+  }
+  }
+}
 .main {
   width: 100%;
-  border: 1px solid #fff;
   border-radius: 4px;
   padding: 1rem 0px;
   margin: 1rem 0px;
@@ -36,7 +56,6 @@ const width = ref(`width: ${props.width}%`);
       border-radius: 4px;
       width: 100%;
       height: 8px;
-      background-color: #212121;
       .progress {
         background-color: #4415ff;
         height: 8px;

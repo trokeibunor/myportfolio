@@ -14,24 +14,28 @@
   <div class="nav-clone">
     <nav>
     <div class="nav-content">
-      <img src="../components/icons/dark_logo.svg" alt="" srcset="" />
+      <img v-if="siteState.isDarkMode" src="../components/icons/dark_logo.svg" alt="" srcset="" />
+      <img v-else src="../components/icons/light_logo.svg" alt="" srcset="" />
       <div class="nav-link">
         <a href="#">Works</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
-        <img src="../components/icons/moon_icon.svg" alt="" />
+        <img v-if="siteState.isDarkMode" @click="siteState.toggleDarkMode" src="../components/icons/moon_icon.svg" alt="" />
+        <img v-else @click="siteState.toggleDarkMode" src="../components/icons/sun_icon.svg" alt="" />
       </div>
     </div>
   </nav>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { useSiteState } from '@/stores/siteState';
+  const siteState = useSiteState()
+</script>
 
 <style lang="scss" scoped>
 #whole {
   width: 100%;
-  background-color: #181c28;
   padding: 0.5rem 0px;
   .inner {
     width: 70%;
@@ -40,14 +44,12 @@
     justify-content: space-between;
     a {
       text-decoration: none;
-      color: #fff;
       display: flex;
     }
   }
 }
 nav {
   width: 100%;
-  
   .nav-content {
     width: 80%;
     display: flex;
@@ -66,11 +68,11 @@ nav {
       gap: 40px;
       a {
         text-decoration: none;
-        color: #fff;
         font-size: 16px;
       }
       img {
         max-height: 24px;
+        cursor: pointer;
       }
     }
   }

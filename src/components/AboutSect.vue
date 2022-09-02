@@ -55,12 +55,13 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
+@import "@/Global_styles/colors.scss";
 #about {
   display: flex;
   flex-direction: column;
   width: 80%;
   margin: 0px auto;
-  color: #fff;
+  color: $white_text;
   position: relative;
   .title {
     display: flex;
@@ -72,7 +73,6 @@
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-image: url("../components/icons/blurry-background.svg");
     .image-holder {
       img#boy-img {
         width: 40vw;
@@ -113,7 +113,7 @@
         gap: 12px;
         margin: 1rem 0px;
         p {
-          border: 1px solid #fff;
+          border: 1px solid $white_text;
           padding: 10px 20px;
           border-radius: 50%;
         }

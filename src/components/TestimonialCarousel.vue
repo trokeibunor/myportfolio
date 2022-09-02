@@ -122,17 +122,14 @@
 <script lang="ts">
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
-
 // Import Swiper styles
 import "swiper/css";
 
 import "swiper/css/effect-cards";
 
 // import "./style.css";
-
 // import required modules
 import { EffectCards } from "swiper";
-
 export default {
   components: {
     Swiper,
@@ -143,15 +140,16 @@ export default {
       modules: [EffectCards],
     };
   },
+  
 };
 </script>
 <style lang="scss" scoped>
+@import "@/Global_styles/colors.scss";
 .swiper-slide {
   text-align: left;
-  background: #181c28;
   border-radius: 8px;
   padding: 4px 24px;
-
+  background-color: $alt_dark;
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -182,10 +180,12 @@ export default {
   text-align: center;
 }
 #info {
+  font-family: 'Space Grotesk', sans-serif;
   text-align: left;
   font-size: 18px;
   font-weight: Bold;
   span {
+    font-family: "Montserrat", sans-serif;
     font-size: 15px;
     color: #613aff;
   }

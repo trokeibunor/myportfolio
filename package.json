@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@duskmoon/vue3-typed-js": "^0.0.2",
+    "@emailjs/browser": "^3.7.0",
+    "emailjs": "^4.0.1",
     "pinia": "^2.0.17",
     "swiper": "^8.3.2",
     "vue": "^3.2.37",

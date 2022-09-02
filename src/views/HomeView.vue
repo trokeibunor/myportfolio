@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" :class="{'light-mode': !siteState.isDarkMode,'dark-mode': siteState.isDarkMode}">
     <NavBar />
     <!-- Hero section -->
     <section class="hero">
@@ -10,14 +10,13 @@
         </p>
         <h2>
           My name is Emmanuel, I'm a
-          
             <span id="fullStack">&#128521;
               <VueWriter :array="['Fullstack Developer', 'JAMstack Developer', 'Lover', 'Not a fighter']"/>
             </span>
         </h2>
         <p id="desc">
           I’ve been into coding and designing since 2019. I have designed
-          and developed lots of amazing products etc.
+          and developed amazing products.
         </p>
         <div class="btn-row">
           <a id="downloadCV" href="#" target="_blank" rel="noopener noreferrer">
@@ -26,7 +25,8 @@
           </a>
           <a id="scroll" href="#">
             <span>Kindly Scroll down</span>
-            <img src="../components/icons/plane_down.svg" alt="" srcset="" />
+            <img v-if="siteState.isDarkMode" src="../components/icons/plane_down.svg" alt="" srcset="" />
+            <img v-else src="../components/icons/plane_down_light.svg" alt="" srcset="" />
           </a>
         </div>
       </div>
@@ -75,24 +75,71 @@ import TestimonialSect from "../components/TestimonialSect.vue";
 import ContactSect from "../components/ContactSect.vue";
 import FooterSect from "../components/FooterSect.vue";
 import VueWriter from "vue-writer";
-// const VueWriter = require("vue-writer");
+import { useSiteState } from "@/stores/siteState";
+const siteState = useSiteState()
 </script>
 
 <style lang="scss">
-$light-background: #f2f2f2;
-$dark-background: #111216;
-$purple: #4415ff;
+@import "@/Global_styles/colors.scss";
+.light-mode{
+  background-color: $light-background;
+  a,p,h2,h3,h5{
+    color:$dark_text
+  }
+  #scroll{
+    span{
+      color:$dark_text
+    }
+  }
+  .swiper-slide{
+    background-color: hsl(0, 0%, 90%);
+  }
+  form{
+    background-color: hsl(0, 0%, 90%);
+    button{
+      p{
+        color: #fff;
+      }
+    }
+  }
+  #whole{
+    background-color: $alt_light;
+  }
+}
+.dark-mode{
+  background-color: $dark-background;
+  a,p,h2,h3,h5{
+    color: $white_text
+  }
+  #scroll{
+    span{
+      color:$white_text
+    }
+  }
+  .swiper-slide{
+    background-color: $alt_dark;
+  }
+  form{
+    background-color: $alt_dark;
+    input,textarea{
+      background-color: $dark-background;
+    }
+  }
+  #whole{
+    background-color: $alt_dark;
+  }
+}
 $main-font: "Montserrat", sans-serif;
 body {
   background-color: $dark-background;
   font-family: "Montserrat", sans-serif;
-  margin: 0;
+  margin: 0px;
   padding: 0px;
   overflow-x: hidden;
 }
 // style scrollbar
 body::-webkit-scrollbar {
-  width: 1em;
+  width: 0em;
 }
 
 body::-webkit-scrollbar-track {
@@ -101,6 +148,14 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: #181035;
+}
+.name-divider {
+  position: relative;
+  bottom: 0px;
+  z-index: 2;
+  img {
+    max-width: 100%;
+  }
 }
 #downloadCV {
   img {
@@ -120,7 +175,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #fff;
+  color: $white_text;
   text-decoration: none;
 }
 .hero {
@@ -142,7 +197,7 @@ body::-webkit-scrollbar-thumb {
     justify-items: center;
     align-content: flex-end;
     #fullStack {
-      color: $purple;
+      color: $purple !important;
       div{
         display: inline;
       }
@@ -276,14 +331,6 @@ body::-webkit-scrollbar-thumb {
         font-size: 12px;
       }
     }
-  }
-}
-.name-divider {
-  position: relative;
-  bottom: 0px;
-  z-index: -1;
-  img {
-    max-width: 100%;
   }
 }
 </style>

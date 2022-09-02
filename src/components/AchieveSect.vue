@@ -1,5 +1,5 @@
 <template>
-  <div id="achieve">
+  <div id="achieve" :class="{'light-mode': !siteState.isDarkMode,'dark-mode': siteState.isDarkMode}">
     <div class="title">
       <img src="../components/icons/port-divider.svg" alt="" srcset="" />
       <p>CERTIFICATION/ CAREER HIGHLIGHTS</p>
@@ -90,15 +90,43 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { useSiteState } from '@/stores/siteState';
+  const siteState = useSiteState()
+</script>
 
 <style lang="scss" scoped>
+@import "@/Global_styles/colors.scss";
+.light-mode{
+  .content{
+    .education-box,.work-box{
+      background-color: $alt_light;
+    }
+  }
+  .see_through{
+    p{
+      border: 1px solid #181c283a;
+    }
+  }
+}
+.dark-mode{
+  .content{
+    .education-box,.work-box{
+      background-color: $alt_dark;
+    }
+  }
+  .see_through{
+    p{
+      border: 1px solid $white_text;
+    }
+  }
+}
 #achieve {
   display: flex;
   flex-direction: column;
   width: 80%;
   margin: 0px auto;
-  color: #fff;
+  color: $white-text;
   .title {
     display: flex;
     gap: 4px;
@@ -117,7 +145,6 @@
       width: 40%;
       display: flex;
       flex-direction: column;
-      background-color: #181c28;
       border-radius: 8px;
       justify-content: flex-start;
       align-items: center;
@@ -146,7 +173,6 @@
     display: flex;
     justify-content: space-around;
     p {
-      border: 1px solid #fff;
       border-radius: 50%;
       padding: 16px 18px;
     }

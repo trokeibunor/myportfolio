@@ -32,11 +32,11 @@
         </a>
       </div>
       <form action="#">
-        <input type="text" placeholder="Subject" />
-        <input type="email" placeholder="Email Address" />
-        <textarea rows="8" placeholder="Enter Message"></textarea>
+        <input type="text" v-model="contactForm.subject" name="subjec" placeholder="Subject" />
+        <input type="email" v-model="contactForm.email" name="email" placeholder="Email Address" />
+        <textarea rows="8" v-model="contactForm.message" name="message`" placeholder="Enter Message"></textarea>
         <div class="holder">
-          <button>
+          <button @click="sendMail">
             <p>Shoot Mail</p>
             <img src="../components/icons/plane_up.svg" alt="" />
           </button>
@@ -46,7 +46,44 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  // import emailjs from 'emailjs-com';
+  import{reactive} from 'vue';
+  const contactForm = reactive({
+    subject: '',
+    email: '',
+    message: ''
+  })
+    // const mailData = reactive({
+    //   service_ID: "service_yvgjibc",
+    //   template_ID: "template_ms0xoqp",
+    //   userID: "YgFr_HC_CEEFSDd2a",
+    // })
+  function sendMail(){
+      // emailjs.sendForm(
+      //   mailData.service_ID,
+      //   mailData.template_ID,
+      //   e.target,
+      //   mailData.userID,{
+      //       subject: contactForm.subject,
+      //       message: contactForm.message,
+      //       reply_to: contactForm.email,
+      //     }
+      //   )
+      //   .then(()=>{
+      //       // Mail sent div
+      //       // clear form
+      //       contactForm.subject = "";
+      //       contactForm.message = "";
+      //       contactForm.email = ""
+      //     },
+      //     (error)=>{
+      //     // use toast to show that email has not been sent
+      //     console.log(error)
+      //   }
+      // )
+    }
+</script>
 
 <style lang="scss" scoped>
 #contacts {
@@ -54,7 +91,6 @@
   flex-direction: column;
   width: 80%;
   margin: 0px auto;
-  color: #fff;
   .title {
     display: flex;
     gap: 4px;
@@ -84,7 +120,6 @@
     form {
       display: flex;
       flex-direction: column;
-      background-color: #181c28;
       //   justify-content: center;
       //   align-items: center;
       width: 50%;
@@ -97,7 +132,6 @@
         border-radius: 8px;
         padding: 24px 0px 24px 16px;
         font-size: 18px;
-        background-color: #111216;
         border: none;
         outline: none;
         color: #fff;
@@ -114,7 +148,6 @@
           justify-content: flex-end;
           align-items: center;
           background-color: #4415ff;
-          color: #fff;
           padding: 8px 16px;
           border-radius: 30px;
           font-size: 16px;
