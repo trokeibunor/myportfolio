@@ -11,7 +11,7 @@
         <h2>
           My name is Emmanuel, I'm a
             <span id="fullStack">&#128521;
-              <VueWriter :array="['Fullstack Developer', 'JAMstack Developer', 'Lover', 'Not a fighter']"/>
+              <VueWriter :array="['Fullstack Developer', 'JAMstack Developer']"/>
             </span>
         </h2>
         <p id="desc">
@@ -23,7 +23,7 @@
             <img src="../components/icons/cloud_download.svg" alt="" />
             <span>Download CV</span>
           </a>
-          <a id="scroll" href="#">
+          <a id="scroll" href="/#about">
             <span>Kindly Scroll down</span>
             <img v-if="siteState.isDarkMode" src="../components/icons/plane_down.svg" alt="" srcset="" />
             <img v-else src="../components/icons/plane_down_light.svg" alt="" srcset="" />
@@ -35,13 +35,15 @@
       </div>
     </section>
     <div class="name-divider">
-      <img src="../components/icons/name-divider.svg" alt="" srcset="" />
+      <img v-if="siteState.isDarkMode" src="../components/icons/name-divider.svg" alt="" srcset="" />
+      <img v-else src="../components/icons/name-divider-light.svg" alt="" srcset="" />
     </div>
-    <section class="about">
+    <section class="about" id="abouts">
       <AboutSect />
       <div class="name-divider">
-        <img src="../components/icons/name-divider.svg" alt="" srcset="" />
-      </div>
+        <img v-if="siteState.isDarkMode" src="../components/icons/name-divider.svg" alt="" srcset="" />
+        <img v-else src="../components/icons/name-divider-light.svg" alt="" srcset="" />
+    </div>
     </section>
     <section class="skills">
       <SkillsSect />
@@ -49,16 +51,17 @@
     <section class="achieve">
       <AchieveSect />
     </section>
-    <section class="works">
+    <section class="works" id="work">
       <div class="name-divider">
-        <img src="../components/icons/name-divider.svg" alt="" srcset="" />
+        <img v-if="siteState.isDarkMode" src="../components/icons/name-divider.svg" alt="" srcset="" />
+        <img v-else src="../components/icons/name-divider-light.svg" alt="" srcset="" />
       </div>
       <WorksSect/>
     </section>
     <section class="testimonial">
       <TestimonialSect/>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
       <ContactSect/>
     </section>
     <FooterSect/>
@@ -184,6 +187,10 @@ body::-webkit-scrollbar-thumb {
     "text textsn image"
     "text textsn image"
     "text textsn image";
+  background-image: url('../components/icons/blurry-background.png');
+  background-size: contain;
+  background-position: 110% 20%;
+  background-repeat: no-repeat;
   .text-section {
     width: 84%;
     grid-area: text;
@@ -249,14 +256,25 @@ body::-webkit-scrollbar-thumb {
   .image-section {
     grid-area: image;
     height: 90vh;
-    background-image: url("../components/icons/blurry-background.svg");
-    background-position: top 75%;
+    
     img {
       width: 100%;
       height: auto;
       object-fit: cover;
     }
   }
+}
+.about{
+  background-image: url('../components/icons/blurry-background.png');
+  background-size: contain;
+  background-position: 0% 20%;
+  background-repeat: no-repeat;
+}
+#achieve{
+  background-image: url('../components/icons/blurry-background-ach.png');
+  background-size: 75% 100%;
+  background-position: 50% 20%;
+  background-repeat: no-repeat;
 }
 @media screen and (max-width: 1024px){
   // For tablet

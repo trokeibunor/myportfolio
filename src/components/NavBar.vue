@@ -8,9 +8,9 @@
       <img class="logo" v-if="siteState.isDarkMode" src="../components/icons/dark_logo.svg" alt="" srcset="" />
       <img class= "logo" v-else src="../components/icons/light_logo.svg" alt="" srcset="" />
       <div class="nav-link">
-        <a href="#">Works</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="/#work">Works</a>
+        <a href="/#abouts">About</a>
+        <a href="/#contact">Contact</a>
         <img class="switcher" v-if="siteState.isDarkMode" @click="siteState.toggleDarkMode" src="../components/icons/moon_icon.svg" alt="" />
         <img class="switcher" v-else @click="siteState.toggleDarkMode" src="../components/icons/sun_icon.svg" alt="" />
       </div>
