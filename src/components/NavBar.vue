@@ -15,9 +15,11 @@
         <img class="switcher" v-else @click="siteState.toggleDarkMode" src="../components/icons/sun_icon.svg" alt="" />
       </div>
       <div class="menu_toggler">
-        <img class="toggler" src="../components/icons/menu_toggler_dark.svg" alt="" srcset="">
+        
         <img class="switcher" v-if="siteState.isDarkMode" @click="siteState.toggleDarkMode" src="../components/icons/moon_icon.svg" alt="" />
         <img class="switcher" v-else @click="siteState.toggleDarkMode" src="../components/icons/sun_icon.svg" alt="" />
+        <img class="toggler" v-if="siteState.isDarkMode" src="../components/icons/menu_toggler_dark.svg" alt="" srcset=""/>
+        <img class="toggler" v-else src="../components/icons/menu_toggler_light.svg" alt="" srcset=""/>
       </div>
     </div>
   </nav>
@@ -90,9 +92,10 @@ nav {
       .menu_toggler{
         display: flex;
         align-items: center;
+        gap: 12px;
         .toggler{
-          width: 25px;
-          height: 25px;
+          width: 23px;
+          height: 23px;
         }
       }
     }
