@@ -43,7 +43,7 @@
           <p>Football</p>
           <p>Reading</p>
         </div>
-        <a id="downloadCV" href="#" target="_blank" rel="noopener noreferrer">
+        <a id="downloadCV" href="https://drive.google.com/file/d/1bgR1SgKj6X9rYQ6weDco6aM_ntmESMLy/view?usp=sharing" target="_blank" rel="noopener noreferrer">
           <img src="../components/icons/cloud_download.svg" alt="" />
           <span>Download CV</span>
         </a>

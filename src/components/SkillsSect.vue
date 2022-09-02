@@ -82,8 +82,8 @@ const clickedBox = ref("frontend");
 
 <style lang="scss" scoped>
 // dynamic classes
-.active {
-  color: #4415ff;
+.active p{
+  color: #4415ff !important;
 }
 #skills {
   display: flex;

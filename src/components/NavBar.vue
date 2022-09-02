@@ -15,7 +15,6 @@
         <img class="switcher" v-else @click="siteState.toggleDarkMode" src="../components/icons/sun_icon.svg" alt="" />
       </div>
       <div class="menu_toggler">
-        
         <img class="switcher" v-if="siteState.isDarkMode" @click="siteState.toggleDarkMode" src="../components/icons/moon_icon.svg" alt="" />
         <img class="switcher" v-else @click="siteState.toggleDarkMode" src="../components/icons/sun_icon.svg" alt="" />
         <img class="toggler" v-if="siteState.isDarkMode" src="../components/icons/menu_toggler_dark.svg" alt="" srcset=""/>
@@ -85,7 +84,7 @@ nav {
     background-color: $dark-background;
     .nav-content{
       width: 90%;
-      padding: 2rem 0px;
+      padding: 1.5rem 0px;
       .nav-link{
         display: none;
       }

@@ -19,7 +19,7 @@
           and developed amazing products.
         </p>
         <div class="btn-row">
-          <a id="downloadCV" href="#" target="_blank" rel="noopener noreferrer">
+          <a id="downloadCV" href="https://drive.google.com/file/d/1bgR1SgKj6X9rYQ6weDco6aM_ntmESMLy/view?usp=sharing" target="_blank" rel="noopener noreferrer">
             <img src="../components/icons/cloud_download.svg" alt="" />
             <span>Download CV</span>
           </a>
@@ -270,18 +270,13 @@ body::-webkit-scrollbar-thumb {
   background-position: 0% 20%;
   background-repeat: no-repeat;
 }
-#achieve{
-  background-image: url('../components/icons/blurry-background-ach.png');
-  background-size: 75% 100%;
-  background-position: 50% 20%;
-  background-repeat: no-repeat;
-}
 @media screen and (max-width: 1024px){
   // For tablet
   .hero{
     margin-top: 5rem;
     display: grid;
     grid-template-columns: 50% 50%;
+    background-position: 130% 20%;
     .text-section{
       width: 84%;
       grid-column: 1;
@@ -303,6 +298,9 @@ body::-webkit-scrollbar-thumb {
       height: auto;
     }
   }
+  .about{
+    background-position: -80% 20%;
+  }
 }
 @media screen and (max-width: 768px){
   // For mobile
@@ -310,6 +308,7 @@ body::-webkit-scrollbar-thumb {
     margin-top: 3.5rem;
     display: flex;
     flex-direction: column;
+    background-position: 100% 100%;
     gap: 8px;
     .text-section{
       width: 80%;
@@ -336,6 +335,9 @@ body::-webkit-scrollbar-thumb {
         width: 80%;
       }
     }
+  }
+  .about{
+    background-position: 100% 70%;
   }
 }
 @media screen and (max-width: 400px){

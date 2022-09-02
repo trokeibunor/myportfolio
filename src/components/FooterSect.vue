@@ -17,9 +17,7 @@
       <img v-if="siteState.isDarkMode" src="../components/icons/dark_logo.svg" alt="" srcset="" />
       <img v-else src="../components/icons/light_logo.svg" alt="" srcset="" />
       <div class="nav-link">
-        <a href="#">Works</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <p>Copyright &copy; okeibunoremma 2022</p>
         <img v-if="siteState.isDarkMode" @click="siteState.toggleDarkMode" src="../components/icons/moon_icon.svg" alt="" />
         <img v-else @click="siteState.toggleDarkMode" src="../components/icons/sun_icon.svg" alt="" />
       </div>
@@ -88,8 +86,15 @@ nav {
     .nav-content{
       padding: 1.5rem 0px;
       .nav-link{
-      display: none;
-    }
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column-reverse;
+        gap: 4px;
+        p{
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
     }
     
   }
