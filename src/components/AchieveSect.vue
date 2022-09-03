@@ -46,7 +46,7 @@
       <div class="work-box">
         <img src="../components/icons/work_icon.svg" alt="" srcset="" />
         <div class="info-box">
-          <h5>NPDC Benin, Reservoir Engineering(intership)</h5>
+          <h5>NPDC Benin, Reservoir Engineering(internship)</h5>
           <p>Edo State,Nigeria</p>
           <p>2022</p>
         </div>

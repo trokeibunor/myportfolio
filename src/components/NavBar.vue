@@ -10,6 +10,7 @@
       <img class="logo" v-if="siteState.isDarkMode" src="../components/icons/dark_logo.svg" alt="" srcset="" />
       <img class= "logo" v-else src="../components/icons/light_logo.svg" alt="" srcset="" />
       <div class="nav-link">
+        <a href="/#top">Home</a>
         <a href="/#abouts">About</a>
         <a href="/#work">Works</a>
         <a href="/#contact">Contact</a>
@@ -32,6 +33,7 @@
     <transition name="fade">
       <!-- Mobile Menu -->
       <div class="mobile-drop" v-if="dropDown">
+        <a href="/#top" @click="dropDown = false" class="mobile-nav">Home</a>
         <a href="/#abouts" @click="dropDown = false" class="mobile-nav">About</a>
         <a href="/#work"  @click="dropDown = false" class="mobile-nav">Works</a>
         <a href="/#contact"  @click="dropDown = false" class="mobile-nav">Contact</a>

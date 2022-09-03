@@ -1,8 +1,8 @@
 <template>
-  <div class="wrapper" :class="{'light-mode': !siteState.isDarkMode,'dark-mode': siteState.isDarkMode}">
+  <div class="wrapper" :class="{'light-mode': !siteState.isDarkMode,'dark-mode': siteState.isDarkMode}" id="top">
     <NavBar />
     <!-- Hero section -->
-    <section class="hero">
+    <section class="hero" >
       <div class="text-section">
         <p id="welcome">
           HI, WELCOME
