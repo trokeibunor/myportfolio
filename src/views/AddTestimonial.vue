@@ -40,16 +40,40 @@
           </div>
         </nav>
       </div>
-      {{ password }}
-      {{ viewer }}
       <div class="passwordProtection" v-if="!viewer">
         <p>Hey this page is password protected</p>
-        <input
-          :class="{ active: checker }"
-          type="password"
-          v-model="password"
-        />
-        <button @click="checker">Enter</button>
+        <input type="password" v-model="password" @keyup="checker" />
+      </div>
+      <div class="testimonialForm" v-else>
+        <p id="intro">Add Testimonial</p>
+        <form>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            v-model="userName"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            v-model="email"
+          />
+          <input type="text" placeholder="Position" />
+          <input type="text" placeholder="Work Place" />
+          <textarea
+            name="testimonial"
+            rows="8"
+            placeholder="Testimonial"
+            v-model="testimonial"
+            @keyup="textCounter"
+            maxlength="200"
+          ></textarea>
+          <div class="sub-row">
+            <p class="small">text count: {{ testimonial.length }} / 200</p>
+            <button>Submit Testimonial</button>
+          </div>
+        </form>
       </div>
     </div>
     <FooterSect />
@@ -66,12 +90,15 @@ const siteState = useSiteState();
 // conditionals
 const checker = function () {
   if (password.value == "okeibunoremma") {
-    viewer.value == true;
+    viewer.value = true;
   }
-  alert(password.value)
-  console.log(password.value);
-  console.log(viewer.value);
 };
+const textCounter = function () {
+  console.log(testimonial.value.length);
+};
+const userName = ref("");
+const email = ref("");
+const testimonial = ref("");
 </script>
 
 <style lang="scss" scoped>
@@ -97,6 +124,17 @@ const checker = function () {
     background-color: hsl(0, 0%, 90%);
     button {
       p {
+        color: #fff;
+      }
+    }
+    input,
+    textarea {
+      background-color: #fff;
+      color: $dark_text;
+    }
+    .sub-row {
+      button {
+        background-color: #2a1d5ada;
         color: #fff;
       }
     }
@@ -128,19 +166,31 @@ const checker = function () {
     textarea {
       background-color: $dark-background;
     }
+    input,
+    textarea {
+      background-color: $light-background;
+      color: $dark_text;
+    }
+    .sub-row {
+      button {
+        background-color: #2a1d5ada;
+        color: #fff;
+      }
+    }
   }
   #whole {
     background-color: $alt_dark;
   }
 }
 .active {
-  border: 1px solid rgb(8, 85, 8);
+  border: 2px solid rgb(8, 85, 8);
+  transform: scale(1.5);
 }
 .wrapper {
   width: 100%;
   min-height: 100vh;
   .container {
-    height: 90vh;
+    min-height: 90vh;
   }
   .passwordProtection {
     width: 40%;
@@ -156,13 +206,65 @@ const checker = function () {
       font-size: 16px;
     }
   }
+  .testimonialForm {
+    width: 30%;
+    margin: 0.5rem auto;
+    #intro {
+      font-weight: 600;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      -webkit-gap: 8px;
+      padding: 24px 16px;
+      border-radius: 4px;
+      input,
+      textarea {
+        width: 95%;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        padding: 10px 0px 10px 12px;
+      }
+      .sub-row {
+        display: flex;
+        justify-content: space-between;
+        .small {
+          font-size: 14px;
+          font-weight: 600;
+        }
+        button {
+          cursor: pointer;
+          border-radius: 6px;
+          font-weight: 600;
+          padding: 4px 12px;
+          outline: none;
+          border: none;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .sub-row {
+      .small {
+        font-size: 8px;
+      }
+    }
+    .testimonialForm {
+      width: 80%;
+    }
+    .passwordProtection {
+      width: 80%;
+    }
+  }
   .nav-content {
     width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0px auto;
-    padding: 3rem 0px;
+    padding: 1rem 0px;
     img {
       max-height: 32px;
       max-width: 153px;
