@@ -20,7 +20,7 @@
           srcset=""
         />
         I’ve been into coding and designing since i was 16. I have designed and
-        developed lots of amazing products etc. I’m very much farmilia with
+        developed lots of amazing products etc. I’m very much familiar with
         these tools and many more
         <img
           class="quotes"
@@ -48,7 +48,7 @@
           srcset=""
         />
         I’ve been into coding and designing since i was 16. I have designed and
-        developed lots of amzing products etc. I’m very much farmilia with these
+        developed lots of amazing products etc. I’m very much familiar with these
         tools and many more
         <img
           class="quotes"
@@ -76,7 +76,7 @@
           srcset=""
         />
         I’ve been into coding and designing since i was 16. I have designed and
-        developed lots of amzing products etc. I’m very much farmilia with these
+        developed lots of amazing products etc. I’m very much familiar with these
         tools and many more
         <img
           class="quotes"
@@ -104,7 +104,7 @@
           srcset=""
         />
         I’ve been into coding and designing since i was 16. I have designed and
-        developed lots of amzing products etc. I’m very much farmilia with these
+        developed lots of amzing products etc. I’m very much familiar with these
         tools and many more
         <img
           class="quotes"

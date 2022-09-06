@@ -1,8 +1,15 @@
 <template>
-  <div class="wrapper" :class="{'light-mode': !siteState.isDarkMode,'dark-mode': siteState.isDarkMode}" id="top">
+  <div
+    class="wrapper"
+    :class="{
+      'light-mode': !siteState.isDarkMode,
+      'dark-mode': siteState.isDarkMode,
+    }"
+    id="top"
+  >
     <NavBar />
     <!-- Hero section -->
-    <section class="hero" >
+    <section class="hero">
       <div class="text-section">
         <p id="welcome">
           HI, WELCOME
@@ -10,23 +17,39 @@
         </p>
         <h2>
           My name is Emmanuel, I'm a
-            <span id="fullStack">&#128521;
-              <VueWriter :array="['Fullstack Developer', 'JAMstack Developer']"/>
-            </span>
+          <span id="fullStack"
+            >&#128521;
+            <VueWriter :array="['Fullstack Developer', 'JAMstack Developer']" />
+          </span>
         </h2>
         <p id="desc">
-          I’ve been into coding and designing since 2019. I have designed
-          and developed amazing products.
+          I’ve been into coding and designing since 2019. I have designed and
+          developed amazing products.
         </p>
         <div class="btn-row">
-          <a id="downloadCV" href="https://drive.google.com/file/d/1bgR1SgKj6X9rYQ6weDco6aM_ntmESMLy/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <a
+            id="downloadCV"
+            href="https://drive.google.com/file/d/1bgR1SgKj6X9rYQ6weDco6aM_ntmESMLy/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src="../components/icons/cloud_download.svg" alt="" />
             <span>Download CV</span>
           </a>
           <a id="scroll" href="/#about">
             <span>Kindly Scroll down</span>
-            <img v-if="siteState.isDarkMode" src="../components/icons/plane_down.svg" alt="" srcset="" />
-            <img v-else src="../components/icons/plane_down_light.svg" alt="" srcset="" />
+            <img
+              v-if="siteState.isDarkMode"
+              src="../components/icons/plane_down.svg"
+              alt=""
+              srcset=""
+            />
+            <img
+              v-else
+              src="../components/icons/plane_down_light.svg"
+              alt=""
+              srcset=""
+            />
           </a>
         </div>
       </div>
@@ -35,15 +58,35 @@
       </div>
     </section>
     <div class="name-divider">
-      <img v-if="siteState.isDarkMode" src="../components/icons/name-divider.svg" alt="" srcset="" />
-      <img v-else src="../components/icons/name-divider-light.svg" alt="" srcset="" />
+      <img
+        v-if="siteState.isDarkMode"
+        src="../components/icons/name-divider.svg"
+        alt=""
+        srcset=""
+      />
+      <img
+        v-else
+        src="../components/icons/name-divider-light.svg"
+        alt=""
+        srcset=""
+      />
     </div>
     <section class="about" id="abouts">
       <AboutSect />
       <div class="name-divider">
-        <img v-if="siteState.isDarkMode" src="../components/icons/name-divider.svg" alt="" srcset="" />
-        <img v-else src="../components/icons/name-divider-light.svg" alt="" srcset="" />
-    </div>
+        <img
+          v-if="siteState.isDarkMode"
+          src="../components/icons/name-divider.svg"
+          alt=""
+          srcset=""
+        />
+        <img
+          v-else
+          src="../components/icons/name-divider-light.svg"
+          alt=""
+          srcset=""
+        />
+      </div>
     </section>
     <section class="skills">
       <SkillsSect />
@@ -53,18 +96,28 @@
     </section>
     <section class="works" id="work">
       <div class="name-divider">
-        <img v-if="siteState.isDarkMode" src="../components/icons/name-divider.svg" alt="" srcset="" />
-        <img v-else src="../components/icons/name-divider-light.svg" alt="" srcset="" />
+        <img
+          v-if="siteState.isDarkMode"
+          src="../components/icons/name-divider.svg"
+          alt=""
+          srcset=""
+        />
+        <img
+          v-else
+          src="../components/icons/name-divider-light.svg"
+          alt=""
+          srcset=""
+        />
       </div>
-      <WorksSect/>
+      <WorksSect />
     </section>
     <section class="testimonial">
-      <TestimonialSect/>
+      <TestimonialSect />
     </section>
     <section class="contact" id="contact">
-      <ContactSect/>
+      <ContactSect />
     </section>
-    <FooterSect/>
+    <FooterSect />
   </div>
 </template>
 
@@ -79,56 +132,65 @@ import ContactSect from "../components/ContactSect.vue";
 import FooterSect from "../components/FooterSect.vue";
 import VueWriter from "vue-writer";
 import { useSiteState } from "@/stores/siteState";
-const siteState = useSiteState()
+const siteState = useSiteState();
 </script>
 
 <style lang="scss">
 @import "@/Global_styles/colors.scss";
-.light-mode{
+.light-mode {
   background-color: $light-background;
-  a,p,h2,h3,h5{
-    color:$dark_text
+  a,
+  p,
+  h2,
+  h3,
+  h5 {
+    color: $dark_text;
   }
-  #scroll{
-    span{
-      color:$dark_text
+  #scroll {
+    span {
+      color: $dark_text;
     }
   }
-  .swiper-slide{
+  .swiper-slide {
     background-color: hsl(0, 0%, 90%);
   }
-  form{
+  form {
     background-color: hsl(0, 0%, 90%);
-    button{
-      p{
+    button {
+      p {
         color: #fff;
       }
     }
   }
-  #whole{
+  #whole {
     background-color: $alt_light;
   }
 }
-.dark-mode{
+.dark-mode {
   background-color: $dark-background;
-  a,p,h2,h3,h5{
-    color: $white_text
+  a,
+  p,
+  h2,
+  h3,
+  h5 {
+    color: $white_text;
   }
-  #scroll{
-    span{
-      color:$white_text
+  #scroll {
+    span {
+      color: $white_text;
     }
   }
-  .swiper-slide{
+  .swiper-slide {
     background-color: $alt_dark;
   }
-  form{
+  form {
     background-color: $alt_dark;
-    input,textarea{
+    input,
+    textarea {
       background-color: $dark-background;
     }
   }
-  #whole{
+  #whole {
     background-color: $alt_dark;
   }
 }
@@ -187,7 +249,7 @@ body::-webkit-scrollbar-thumb {
     "text textsn image"
     "text textsn image"
     "text textsn image";
-  background-image: url('../components/icons/blurry-background.png');
+  background-image: url("../components/icons/blurry-background.png");
   background-size: contain;
   background-position: 110% 20%;
   background-repeat: no-repeat;
@@ -205,7 +267,7 @@ body::-webkit-scrollbar-thumb {
     align-content: flex-end;
     #fullStack {
       color: $purple !important;
-      div{
+      div {
         display: inline;
       }
     }
@@ -256,7 +318,7 @@ body::-webkit-scrollbar-thumb {
   .image-section {
     grid-area: image;
     height: 90vh;
-    
+
     img {
       width: 100%;
       height: auto;
@@ -264,90 +326,90 @@ body::-webkit-scrollbar-thumb {
     }
   }
 }
-.about{
-  background-image: url('../components/icons/blurry-background.png');
+.about {
+  background-image: url("../components/icons/blurry-background.png");
   background-size: contain;
   background-position: 0% 20%;
   background-repeat: no-repeat;
 }
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   // For tablet
-  .hero{
+  .hero {
     margin-top: 5rem;
     display: grid;
     grid-template-columns: 50% 50%;
     background-position: 130% 20%;
-    .text-section{
+    .text-section {
       width: 84%;
       grid-column: 1;
-      #welcome{
+      #welcome {
         font-size: 12px;
       }
-      h2{
+      h2 {
         font-size: 32px;
       }
-      #desc{
+      #desc {
         width: 90%;
       }
-      .btn-row{
+      .btn-row {
         gap: 12px;
       }
     }
-    .image-section{
+    .image-section {
       grid-column: 2;
       height: auto;
     }
   }
-  .about{
+  .about {
     background-position: -80% 20%;
   }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   // For mobile
-  .hero{
+  .hero {
     margin-top: 3.5rem;
     display: flex;
     flex-direction: column;
     background-position: 100% 100%;
     gap: 8px;
-    .text-section{
+    .text-section {
       width: 80%;
       text-align: center;
       justify-content: center;
       align-items: center;
-      h2{
+      h2 {
         font-size: 28px;
         width: 120%;
       }
-      #desc{
+      #desc {
         font-size: 14px;
       }
-      .btn-row{
+      .btn-row {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 24px;
       }
     }
-    .image-section{
+    .image-section {
       width: 100%;
-      img{
+      img {
         width: 80%;
       }
     }
   }
-  .about{
+  .about {
     background-position: 100% 70%;
   }
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 400px) {
   // Small mobile
-  .hero{
-    .text-section{
-      h2{
+  .hero {
+    .text-section {
+      h2 {
         font-size: 24px;
       }
-      #desc{
+      #desc {
         font-size: 12px;
       }
     }

@@ -84,6 +84,7 @@ const clickedBox = ref("frontend");
 // dynamic classes
 .active p{
   color: #4415ff !important;
+  font-weight: 600;
 }
 #skills {
   display: flex;

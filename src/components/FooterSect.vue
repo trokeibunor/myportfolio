@@ -13,22 +13,37 @@
   </div>
   <div class="nav-clone">
     <nav>
-    <div class="nav-content">
-      <img v-if="siteState.isDarkMode" src="../components/icons/dark_logo.svg" alt="" srcset="" />
-      <img v-else src="../components/icons/light_logo.svg" alt="" srcset="" />
-      <div class="nav-link">
-        <p>Copyright &copy; okeibunoremma 2022</p>
-        <img v-if="siteState.isDarkMode" @click="siteState.toggleDarkMode" src="../components/icons/moon_icon.svg" alt="" />
-        <img v-else @click="siteState.toggleDarkMode" src="../components/icons/sun_icon.svg" alt="" />
+      <div class="nav-content">
+        <img
+          v-if="siteState.isDarkMode"
+          src="../components/icons/dark_logo.svg"
+          alt=""
+          srcset=""
+        />
+        <img v-else src="../components/icons/light_logo.svg" alt="" srcset="" />
+        <div class="nav-link">
+          <p>Copyright &copy; okeibunoremma 2022</p>
+          <img
+            v-if="siteState.isDarkMode"
+            @click="siteState.toggleDarkMode"
+            src="../components/icons/moon_icon.svg"
+            alt=""
+          />
+          <img
+            v-else
+            @click="siteState.toggleDarkMode"
+            src="../components/icons/sun_icon.svg"
+            alt=""
+          />
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { useSiteState } from '@/stores/siteState';
-  const siteState = useSiteState()
+import { useSiteState } from "@/stores/siteState";
+const siteState = useSiteState();
 </script>
 
 <style lang="scss" scoped>
@@ -77,26 +92,25 @@ nav {
 }
 @media screen and (max-width: 768px) {
   // Mobile
-  #whole{
-    .inner{
+  #whole {
+    .inner {
       flex-direction: column;
     }
   }
-  nav{
-    .nav-content{
+  nav {
+    .nav-content {
       padding: 1.5rem 0px;
-      .nav-link{
+      .nav-link {
         justify-content: flex-end;
         align-items: flex-end;
         flex-direction: column-reverse;
         gap: 4px;
-        p{
+        p {
           font-size: 14px;
           font-weight: 600;
         }
       }
     }
-    
   }
 }
 </style>
