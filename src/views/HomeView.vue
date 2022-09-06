@@ -7,6 +7,8 @@
     }"
     id="top"
   >
+    <!-- Email sent -->
+    
     <NavBar />
     <!-- Hero section -->
     <section class="hero">
