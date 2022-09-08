@@ -31,10 +31,25 @@
           <img src="../components/icons/GitHub.svg" alt="" />
         </a>
       </div>
-      <form action="#">
-        <input type="text" v-model="contactForm.subject" name="subjec" placeholder="Subject" />
-        <input type="email" v-model="contactForm.email" name="email" placeholder="Email Address" />
-        <textarea rows="8" v-model="contactForm.message" name="message`" placeholder="Enter Message"></textarea>
+      <form @submit.prevent="sendMail">
+        <input
+          type="text"
+          v-model="contactForm.subject"
+          name="subjec"
+          placeholder="Subject"
+        />
+        <input
+          type="email"
+          v-model="contactForm.email"
+          name="email"
+          placeholder="Email Address"
+        />
+        <textarea
+          rows="8"
+          v-model="contactForm.message"
+          name="message`"
+          placeholder="Enter Message"
+        ></textarea>
         <div class="holder">
           <button @click="sendMail">
             <p>Shoot Mail</p>
@@ -47,42 +62,21 @@
 </template>
 
 <script setup lang="ts">
-  // import emailjs from 'emailjs-com';
-  import{reactive} from 'vue';
-  const contactForm = reactive({
-    subject: '',
-    email: '',
-    message: ''
-  })
-    // const mailData = reactive({
-    //   service_ID: "service_yvgjibc",
-    //   template_ID: "template_ms0xoqp",
-    //   userID: "YgFr_HC_CEEFSDd2a",
-    // })
-  function sendMail(){
-      // emailjs.sendForm(
-      //   mailData.service_ID,
-      //   mailData.template_ID,
-      //   e.target,
-      //   mailData.userID,{
-      //       subject: contactForm.subject,
-      //       message: contactForm.message,
-      //       reply_to: contactForm.email,
-      //     }
-      //   )
-      //   .then(()=>{
-      //       // Mail sent div
-      //       // clear form
-      //       contactForm.subject = "";
-      //       contactForm.message = "";
-      //       contactForm.email = ""
-      //     },
-      //     (error)=>{
-      //     // use toast to show that email has not been sent
-      //     console.log(error)
-      //   }
-      // )
-    }
+import { reactive } from "vue";
+import { useSiteState } from "@/stores/siteState";
+const siteState = useSiteState();
+const contactForm = reactive({
+  subject: "",
+  email: "",
+  message: "",
+});
+function sendMail() {
+  siteState.sendMail(
+    contactForm.subject,
+    contactForm.email,
+    contactForm.message,
+  );
+}
 </script>
 
 <style lang="scss" scoped>
@@ -167,47 +161,48 @@
     }
   }
 }
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   // tablet
-  #contacts{
-    .toaster{
-      h3{
-        width: 70%
+  #contacts {
+    .toaster {
+      h3 {
+        width: 70%;
       }
     }
-    .contact-holder{
-      form{
+    .contact-holder {
+      form {
         width: 70%;
       }
     }
   }
 }
 @media screen and (max-width: 768px) {
-  #contacts{
+  #contacts {
     width: 90%;
-    .title{
-      img{
+    .title {
+      img {
         max-width: 120px;
       }
     }
-    .toaster{
+    .toaster {
       justify-content: center;
-      h3{
+      h3 {
         text-align: center;
         width: 100%;
         font-size: 18px;
       }
     }
-    .contact-holder{
+    .contact-holder {
       flex-direction: column-reverse;
       gap: 16px;
-      .icon-stack{
+      .icon-stack {
         flex-direction: row;
       }
-      form{
+      form {
         width: 100%;
         padding: 1.5rem 0px;
-        input,textarea{
+        input,
+        textarea {
           width: 85%;
         }
       }

@@ -8,16 +8,22 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import emailjs from "emailjs-com";
 
 export const useSiteState = defineStore({
   id: "siteState",
   state: () => ({
-    isDarkMode: false,
+    isDarkMode: true,
     testimonials: [],
     gigs: [],
     isProcessing: false,
     emailSent: false,
-    emailNotSent: true,
+    emailNotSent: false,
+    mailData: {
+      service_ID: "service_yvgjibc",
+      template_ID: "template_ms0xoqp",
+      userID: "YgFr_HC_CEEFSDd2a",
+    },
   }),
   actions: {
     toggleDarkMode() {
@@ -71,7 +77,7 @@ export const useSiteState = defineStore({
         }
       }
     },
-    async getGigs(){
+    async getGigs() {
       const querySnapshot = await getDocs(collection(db, "gigs"));
       this.gigs = [];
       querySnapshot.forEach((doc) => {
@@ -80,6 +86,35 @@ export const useSiteState = defineStore({
         // mutate projects
         this.gigs.push({ ...dataObject });
       });
+    },
+    async sendMail(subject, message, email, target) {
+      this.isProcessing = true
+      emailjs
+        .sendForm(
+          this.mailData.service_ID,
+          this.mailData.template_ID,
+          target,
+          this.mailData.userID,
+          {
+            subject: subject,
+            message: message,
+            reply_to: email,
+          }
+        )
+        .then(
+          () => {
+            // Mail sent div
+            // Save mail to database
+            this.isProcessing = false;
+            this.emailSent = true
+          },
+          (error) => {
+            // use toast to show that email has not been sent
+            console.log(error);
+            this.isProcessing = false;
+            this.emailSent = true;
+          }
+        );
     },
   },
 });

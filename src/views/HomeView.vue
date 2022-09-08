@@ -22,7 +22,7 @@
     >
       <div
         class="content"
-        v-show="siteState.emailNotSent"
+        v-show="siteState.emailSent"
         @click="siteState.emailSent = false"
       >
         <img src="../components/icons/plane_up.svg" alt="" srcset="" />
@@ -297,12 +297,12 @@ body::-webkit-scrollbar-thumb {
 }
 .emailSent {
   .content {
-    background-color: $purple;
+    background-color: #4415ff;
   }
 }
 .emailNotSent {
   .content {
-    background-color: red;
+    background-color: rgb(153, 1, 1);
   }
 }
 // Notification Styling End
