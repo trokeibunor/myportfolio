@@ -33,7 +33,7 @@
       <div class="content" @click="siteState.emailNotSent = false">
         <img src="../components/icons/plane_down.svg" alt="" srcset="" />
         <p>
-          I'm sorry Your Mail wasn't Sent,please use anther communication
+          I'm sorry Your Mail wasn't Sent,please use another communication
           channels,I'll get back to you As soon as possible
         </p>
       </div>

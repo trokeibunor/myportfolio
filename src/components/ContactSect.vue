@@ -32,26 +32,27 @@
         </a>
       </div>
       <form @submit.prevent="sendMail">
+        <input type="hidden" name="from_name" v-model="contactForm.email">
         <input
           type="text"
           v-model="contactForm.subject"
-          name="subjec"
+          name="subject"
           placeholder="Subject"
         />
         <input
           type="email"
           v-model="contactForm.email"
-          name="email"
+          name="reply_to"
           placeholder="Email Address"
         />
         <textarea
           rows="8"
           v-model="contactForm.message"
-          name="message`"
+          name="message"
           placeholder="Enter Message"
         ></textarea>
         <div class="holder">
-          <button @click="sendMail">
+          <button type="submit">
             <p>Shoot Mail</p>
             <img src="../components/icons/plane_up.svg" alt="" />
           </button>
@@ -70,12 +71,16 @@ const contactForm = reactive({
   email: "",
   message: "",
 });
-function sendMail() {
+function sendMail(e) {
   siteState.sendMail(
     contactForm.subject,
     contactForm.email,
     contactForm.message,
+    e.target,
   );
+  contactForm.subject = "";
+  contactForm.email = "";
+  contactForm.message = ""
 }
 </script>
 

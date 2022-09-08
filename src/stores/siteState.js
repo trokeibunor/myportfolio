@@ -6,6 +6,7 @@ import {
   getDocs,
   collection,
   serverTimestamp,
+  addDoc
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import emailjs from "emailjs-com";
@@ -20,9 +21,9 @@ export const useSiteState = defineStore({
     emailSent: false,
     emailNotSent: false,
     mailData: {
-      service_ID: "service_yvgjibc",
-      template_ID: "template_ms0xoqp",
-      userID: "YgFr_HC_CEEFSDd2a",
+      service_ID: "service_hvwtrwj",
+      template_ID: "template_qzibjml",
+      userID: "nHJqKQDdVHCOHA1Y-",
     },
   }),
   actions: {
@@ -88,33 +89,41 @@ export const useSiteState = defineStore({
       });
     },
     async sendMail(subject, message, email, target) {
-      this.isProcessing = true
-      emailjs
-        .sendForm(
-          this.mailData.service_ID,
-          this.mailData.template_ID,
-          target,
-          this.mailData.userID,
-          {
+      this.isProcessing = true;
+      if (subject != "" && message != "" && email != "") {
+        try {
+          // Send to mail
+          emailjs.sendForm(
+            this.mailData.service_ID,
+            this.mailData.template_ID,
+            target,
+            this.mailData.userID,
+            {
+              from_name: email,
+              subject: subject,
+              message: message,
+              reply_to: email,
+            }
+          );
+          // save to database
+          await addDoc(collection(db, "Messages"), {
+            from_name: email,
             subject: subject,
             message: message,
             reply_to: email,
-          }
-        )
-        .then(
-          () => {
-            // Mail sent div
-            // Save mail to database
-            this.isProcessing = false;
-            this.emailSent = true
-          },
-          (error) => {
-            // use toast to show that email has not been sent
-            console.log(error);
-            this.isProcessing = false;
-            this.emailSent = true;
-          }
-        );
+          });
+          this.isProcessing = false;
+          this.emailSent = true;
+          // save to database
+        } catch (error) {
+          this.isProcessing = false;
+          this.emailNotSent = true;
+          console.log(error);
+        }
+      } else {
+        this.isProcessing = false;
+        this.emailNotSent = true;
+      }
     },
   },
 });
