@@ -6,6 +6,37 @@
       'dark-mode': siteState.isDarkMode,
     }"
   >
+    <!-- Notifications -->
+    <!-- ====================================== -->
+    <!-- ====================================== -->
+    <div class="Notif isProcessing" v-if="siteState.isProcessing">
+      <img src="../components/icons/Loading_gif.gif" alt="" srcset="" />
+    </div>
+    <!-- Email sent -->
+    <!-- Email Notif -->
+    <div
+      class="Notif emailSent"
+      v-show="siteState.emailSent"
+      @click="siteState.emailSent = false"
+    >
+      <div
+        class="content"
+        v-show="siteState.emailSent"
+        @click="siteState.emailSent = false"
+      >
+        <img src="../components/icons/plane_up.svg" alt="" srcset="" />
+        <p>Your Testimonial has been received I really appreciate the effort</p>
+      </div>
+    </div>
+    <div class="Notif emailNotSent" v-show="siteState.emailNotSent">
+      <div class="content" @click="siteState.emailNotSent = false">
+        <img src="../components/icons/plane_down.svg" alt="" srcset="" />
+        <p>
+          Your Testimonial couldn't be added, maybe some issue with the
+          database, please inform me about this.
+        </p>
+      </div>
+    </div>
     <div class="container">
       <div class="nav-clone">
         <nav>
@@ -46,7 +77,7 @@
       </div>
       <div class="testimonialForm" v-else>
         <p id="intro">Add Testimonial</p>
-        <form>
+        <form @submit.prevent="addTestimonial">
           <input
             type="text"
             name="name"
@@ -75,7 +106,7 @@
           ></textarea>
           <div class="sub-row">
             <p class="small">text count: {{ user.testimonial.length }} / 200</p>
-            <button>Submit Testimonial</button>
+            <button type="submit">Submit Testimonial</button>
           </div>
         </form>
       </div>
@@ -107,6 +138,14 @@ const user = reactive({
   workPlace: "",
   testimonial: "",
 });
+function addTestimonial(){
+  siteState.addTestimonial(user);
+  user.name = "";
+  user.email = "";
+  user.position = "";
+  user.workPlace = "";
+  user.testimonial = "";
+}
 </script>
 
 <style lang="scss" scoped>
@@ -194,6 +233,73 @@ const user = reactive({
   border: 2px solid rgb(8, 85, 8);
   transform: scale(1.5);
 }
+// Notification Style
+.Notif {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 150;
+  display: flex;
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 16px;
+    width: 30%;
+    border-radius: 6px;
+    img {
+      align-self: center;
+      width: 32px;
+      height: auto;
+    }
+    p {
+      color: #fff;
+    }
+  }
+}
+.isProcessing {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    margin: 0px;
+    padding: 0px;
+  }
+  gap: 0px;
+}
+.emailSent,
+.emailNotSent {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.emailSent {
+  .content {
+    background-color: #4415ff;
+  }
+}
+.emailNotSent {
+  .content {
+    background-color: rgb(153, 1, 1);
+  }
+}
+// Notification Styling End
+@media screen and (max-width: 1280px){
+  .Notif{
+    .content{
+      width: 50%
+    }
+  }
+}
+@media screen and (max-width: 768px){
+  .Notif{
+    .content{
+      width: 70%
+    }
+  }
+}
 .wrapper {
   width: 100%;
   min-height: 100vh;
@@ -253,7 +359,7 @@ const user = reactive({
       }
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1280px) {
     .sub-row {
       .small {
         font-size: 8px;

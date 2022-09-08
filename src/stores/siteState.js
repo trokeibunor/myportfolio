@@ -6,7 +6,7 @@ import {
   getDocs,
   collection,
   serverTimestamp,
-  addDoc
+  addDoc,
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import emailjs from "emailjs-com";
@@ -52,7 +52,10 @@ export const useSiteState = defineStore({
           createdAt: serverTimestamp(),
         });
         this.isProcessing = false;
+        this.emailSent = true;
       } catch (error) {
+        this.isProcessing = false;
+        this.emailNotSent = true
         if (error) {
           console.log(error);
         }
@@ -111,6 +114,7 @@ export const useSiteState = defineStore({
             subject: subject,
             message: message,
             reply_to: email,
+            sentAt: serverTimestamp(),
           });
           this.isProcessing = false;
           this.emailSent = true;

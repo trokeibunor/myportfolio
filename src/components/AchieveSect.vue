@@ -14,32 +14,32 @@
         </div>
         <div class="info-box">
           <h5>Python, Html, Css, Javascript, PHP</h5>
-          <p>SoloLearn Certicication</p>
+          <p>SoloLearn Certification</p>
           <p>2018</p>
         </div>
         <div class="info-box">
           <h5>WordPress, Basics of Web design, SEO management</h5>
-          <p>Udemy Certicication</p>
+          <p>Udemy Certification</p>
           <p>2019</p>
         </div>
         <div class="info-box">
           <h5>Vue3 composition and options API</h5>
-          <p>Udemy Certicication</p>
+          <p>Udemy Certification</p>
           <p>2021</p>
         </div>
         <div class="info-box">
           <h5>React, Redux</h5>
-          <p>Scrimba Certicication</p>
+          <p>Scrimba Certification</p>
           <p>2022</p>
         </div>
         <div class="info-box">
           <h5>Mongo Db, FirebaseDb</h5>
-          <p>Udemy Certicication</p>
+          <p>Udemy Certification</p>
           <p>2022</p>
         </div>
         <div class="info-box">
           <h5>Design Thinking: The fundamentals</h5>
-          <p>Udemy Certicication</p>
+          <p>Udemy Certification</p>
           <p>2022</p>
         </div>
       </div>
