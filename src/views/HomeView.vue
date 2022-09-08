@@ -7,8 +7,39 @@
     }"
     id="top"
   >
+    <!-- Notifications -->
+    <!-- ====================================== -->
+    <!-- ====================================== -->
+    <div class="Notif isProcessing" v-if="siteState.isProcessing">
+      <img src="../components/icons/Loading_gif.gif" alt="" srcset="" />
+    </div>
     <!-- Email sent -->
-    
+    <!-- Email Notif -->
+    <div
+      class="Notif emailSent"
+      v-show="siteState.emailSent"
+      @click="siteState.emailSent = false"
+    >
+      <div
+        class="content"
+        v-show="siteState.emailNotSent"
+        @click="siteState.emailSent = false"
+      >
+        <img src="../components/icons/plane_up.svg" alt="" srcset="" />
+        <p>Your Mail has been sent, I'll get back to you As soon as possible</p>
+      </div>
+    </div>
+    <div class="Notif emailNotSent" v-show="siteState.emailNotSent">
+      <div class="content" @click="siteState.emailNotSent = false">
+        <img src="../components/icons/plane_down.svg" alt="" srcset="" />
+        <p>
+          I'm sorry Your Mail wasn't Sent,please use anther communication
+          channels,I'll get back to you As soon as possible
+        </p>
+      </div>
+    </div>
+    <!-- ===================================== -->
+    <!-- ===================================== -->
     <NavBar />
     <!-- Hero section -->
     <section class="hero">
@@ -167,6 +198,9 @@ const siteState = useSiteState();
   #whole {
     background-color: $alt_light;
   }
+  .Notif {
+    background-color: #f2f2f2be;
+  }
 }
 .dark-mode {
   background-color: $dark-background;
@@ -195,6 +229,9 @@ const siteState = useSiteState();
   #whole {
     background-color: $alt_dark;
   }
+  .Notif {
+    background-color: #111216e5;
+  }
 }
 $main-font: "Montserrat", sans-serif;
 body {
@@ -216,6 +253,59 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: #181035;
 }
+// Notification Style
+.Notif {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 150;
+  display: flex;
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 16px;
+    width: 30%;
+    border-radius: 6px;
+    img {
+      align-self: center;
+      width: 32px;
+      height: auto;
+    }
+    p {
+      color: #fff;
+    }
+  }
+}
+.isProcessing {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    margin: 0px;
+    padding: 0px;
+  }
+  gap: 0px;
+}
+.emailSent,
+.emailNotSent {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.emailSent {
+  .content {
+    background-color: $purple;
+  }
+}
+.emailNotSent {
+  .content {
+    background-color: red;
+  }
+}
+// Notification Styling End
 .name-divider {
   position: relative;
   bottom: 0px;

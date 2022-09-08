@@ -1,0 +1,85 @@
+import { defineStore } from "pinia";
+import { db } from "@/db";
+import {
+  setDoc,
+  doc,
+  getDocs,
+  collection,
+  serverTimestamp,
+} from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+
+export const useSiteState = defineStore({
+  id: "siteState",
+  state: () => ({
+    isDarkMode: false,
+    testimonials: [],
+    gigs: [],
+    isProcessing: false,
+    emailSent: false,
+    emailNotSent: true,
+  }),
+  actions: {
+    toggleDarkMode() {
+      this.isDarkMode = !this.isDarkMode;
+    },
+    async getTestimonials() {
+      const querySnapshot = await getDocs(collection(db, "testimonial"));
+      this.testimonials = [];
+      querySnapshot.forEach((doc) => {
+        const dataObject = doc.data();
+        // Actions can mutate state in pinia
+        // mutate projects
+        this.testimonials.push({ ...dataObject });
+      });
+    },
+    async addTestimonial({ name, email, position, workPlace, testimonial }) {
+      this.isProcessing = true;
+      try {
+        await setDoc(doc(db, "testimonials", name), {
+          Name: name,
+          email: email,
+          position: position,
+          Workplace: workPlace,
+          testimonial: testimonial,
+          createdAt: serverTimestamp(),
+        });
+        this.isProcessing = false;
+      } catch (error) {
+        if (error) {
+          console.log(error);
+        }
+      }
+    },
+    async addGigs({ name, link, gitLink, img, shortDesc }) {
+      const storage = getStorage();
+      const storageRef = ref(storage, name);
+      const uploadArticle = await uploadBytes(storageRef, img);
+      const downloadUrl = await getDownloadURL(uploadArticle.ref);
+      try {
+        await setDoc(doc(db, "gigs", name), {
+          Name: name,
+          Link: link,
+          GitHubLink: gitLink,
+          ImgLink: downloadUrl,
+          shortDesc,
+          createdAt: serverTimestamp(),
+        });
+      } catch (error) {
+        if (error) {
+          console.log(error);
+        }
+      }
+    },
+    async getGigs(){
+      const querySnapshot = await getDocs(collection(db, "gigs"));
+      this.gigs = [];
+      querySnapshot.forEach((doc) => {
+        const dataObject = doc.data();
+        // Actions can mutate state in pinia
+        // mutate projects
+        this.gigs.push({ ...dataObject });
+      });
+    },
+  },
+});

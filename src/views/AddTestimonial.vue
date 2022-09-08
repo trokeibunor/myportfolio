@@ -51,26 +51,30 @@
             type="text"
             name="name"
             placeholder="Your Name"
-            v-model="userName"
+            v-model="user.name"
           />
           <input
             type="email"
             name="email"
             placeholder="Your Email"
-            v-model="email"
+            v-model="user.email"
           />
-          <input type="text" placeholder="Position" />
-          <input type="text" placeholder="Work Place" />
+          <input type="text" placeholder="Position" v-model="user.position" />
+          <input
+            type="text"
+            placeholder="Work Place"
+            v-model="user.workPlace"
+          />
           <textarea
             name="testimonial"
             rows="8"
             placeholder="Testimonial"
-            v-model="testimonial"
+            v-model="user.testimonial"
             @keyup="textCounter"
             maxlength="200"
           ></textarea>
           <div class="sub-row">
-            <p class="small">text count: {{ testimonial.length }} / 200</p>
+            <p class="small">text count: {{ user.testimonial.length }} / 200</p>
             <button>Submit Testimonial</button>
           </div>
         </form>
@@ -83,7 +87,7 @@
 <script setup lang="ts">
 import { useSiteState } from "@/stores/siteState";
 import FooterSect from "@/components/FooterSect.vue";
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 const password = ref("");
 const viewer = ref(false);
 const siteState = useSiteState();
@@ -94,11 +98,15 @@ const checker = function () {
   }
 };
 const textCounter = function () {
-  console.log(testimonial.value.length);
+  console.log(user.testimonial.length);
 };
-const userName = ref("");
-const email = ref("");
-const testimonial = ref("");
+const user = reactive({
+  name: "",
+  email: "",
+  position: "",
+  workPlace: "",
+  testimonial: "",
+});
 </script>
 
 <style lang="scss" scoped>

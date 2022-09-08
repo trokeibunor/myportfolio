@@ -45,26 +45,32 @@
         <input type="password" v-model="password" @keyup="checker" />
       </div>
       <div class="testimonialForm" v-else>
-        <p id="intro">Add Testimonial</p>
+        <p id="intro">Add Gig</p>
         <form>
           <input
             type="text"
             name="name"
             placeholder="Your Name"
-            v-model="name"
+            v-model="Gig.name"
           />
-          <input type="text" placeholder="Link to project" v-model="link"/>
-          <input type="text" placeholder="Git Link" v-model="gitLink" />
+          <input
+            type="file"
+            name="projectImage"
+            @change="handleproImgUpload"
+            :state="Boolean(projectImg)"
+          />
+          <input type="text" placeholder="Link to project" v-model="Gig.link" />
+          <input type="text" placeholder="Git Link" v-model="Gig.gitLink" />
           <textarea
             name="testimonial"
             rows="8"
             placeholder="Short Description"
-            v-model="shortDesc"
+            v-model="Gig.shortDesc"
             @keyup="textCounter"
             maxlength="200"
           ></textarea>
           <div class="sub-row">
-            <p class="small">text count: {{ shortDesc.length }} / 200</p>
+            <p class="small">text count: {{ Gig.shortDesc.length }} / 200</p>
             <button>Submit Project</button>
           </div>
         </form>
@@ -77,7 +83,7 @@
 <script setup lang="ts">
 import { useSiteState } from "@/stores/siteState";
 import FooterSect from "@/components/FooterSect.vue";
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 const password = ref("");
 const viewer = ref(false);
 const siteState = useSiteState();
@@ -88,13 +94,26 @@ const checker = function () {
   }
 };
 const textCounter = function () {
-  console.log(shortDesc.value.length);
+  console.log(Gig.shortDesc.length);
 };
-const name = ref("");
-const link = ref("");
-const gitLink = ref("");
-const img = ref("")
-const shortDesc = ref("");
+const Gig = reactive({
+  name: "",
+  link: "",
+  gitLink: "",
+  img: "",
+  shortDesc: "",
+})
+const projectImg = ref(false);
+// handle image upload
+function handleproImgUpload(e) {
+  // const self = this;
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  reader.readAsArrayBuffer(file);
+  reader.onload = function () {
+    Gig.img = reader.result as string;
+  };
+}
 </script>
 
 <style lang="scss" scoped>
