@@ -306,6 +306,21 @@ body::-webkit-scrollbar-thumb {
   }
 }
 // Notification Styling End
+// Notification styling Responsive
+@media screen and (max-width: 1280px){
+  .Notif{
+    .content{
+      width: 50%
+    }
+  }
+}
+@media screen and (max-width: 768px){
+  .Notif{
+    .content{
+      width: 70%
+    }
+  }
+}
 .name-divider {
   position: relative;
   bottom: 0px;

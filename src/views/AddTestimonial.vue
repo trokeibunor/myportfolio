@@ -286,6 +286,7 @@ function addTestimonial(){
   }
 }
 // Notification Styling End
+// Notification styling Responsive
 @media screen and (max-width: 1280px){
   .Notif{
     .content{

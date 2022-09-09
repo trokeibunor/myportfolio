@@ -25,16 +25,13 @@
         @click="siteState.emailSent = false"
       >
         <img src="../components/icons/plane_up.svg" alt="" srcset="" />
-        <p>Your Mail has been sent, I'll get back to you As soon as possible</p>
+        <p>The Gig has been added to the database</p>
       </div>
     </div>
     <div class="Notif emailNotSent" v-show="siteState.emailNotSent">
       <div class="content" @click="siteState.emailNotSent = false">
         <img src="../components/icons/plane_down.svg" alt="" srcset="" />
-        <p>
-          I'm sorry Your Mail wasn't Sent,please use another communication
-          channels,I'll get back to you As soon as possible
-        </p>
+        <p>Check the console for error messages, and try again</p>
       </div>
     </div>
     <div class="container">
