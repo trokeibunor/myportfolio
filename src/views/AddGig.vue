@@ -74,7 +74,7 @@
       </div>
       <div class="testimonialForm" v-else>
         <p id="intro">Add Gig</p>
-        <form>
+        <form @submit.prevent="submitGig()">
           <input
             type="text"
             name="name"
@@ -94,12 +94,11 @@
             rows="8"
             placeholder="Short Description"
             v-model="Gig.shortDesc"
-            @keyup="textCounter"
             maxlength="200"
           ></textarea>
           <div class="sub-row">
             <p class="small">text count: {{ Gig.shortDesc.length }} / 200</p>
-            <button>Submit Project</button>
+            <button type="submit">Submit Project</button>
           </div>
         </form>
       </div>
@@ -121,9 +120,6 @@ const checker = function () {
     viewer.value = true;
   }
 };
-const textCounter = function () {
-  console.log(Gig.shortDesc.length);
-};
 const Gig = reactive({
   name: "",
   link: "",
@@ -140,7 +136,17 @@ function handleproImgUpload(e) {
   reader.readAsArrayBuffer(file);
   reader.onload = function () {
     Gig.img = reader.result as string;
-  };
+    console.log(reader.result)
+    console.log(Gig.img)
+  }
+};
+function submitGig(){
+  siteState.addGigs(Gig)
+  Gig.img = "";
+  Gig.name = "";
+  Gig.gitLink = "";
+  Gig.shortDesc = "";
+  Gig.link = "";
 }
 </script>
 

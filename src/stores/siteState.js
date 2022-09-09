@@ -55,13 +55,14 @@ export const useSiteState = defineStore({
         this.emailSent = true;
       } catch (error) {
         this.isProcessing = false;
-        this.emailNotSent = true
+        this.emailNotSent = true;
         if (error) {
           console.log(error);
         }
       }
     },
     async addGigs({ name, link, gitLink, img, shortDesc }) {
+      this.isProcessing = true;
       const storage = getStorage();
       const storageRef = ref(storage, name);
       const uploadArticle = await uploadBytes(storageRef, img);
@@ -75,9 +76,15 @@ export const useSiteState = defineStore({
           shortDesc,
           createdAt: serverTimestamp(),
         });
+        this.isProcessing = false;
+        this.emailSent = true;
       } catch (error) {
+        this.isProcessing = false;
+        this.emailNotSent = true;
         if (error) {
           console.log(error);
+          this.isProcessing = false;
+          this.emailNotSent = true;
         }
       }
     },
