@@ -102,10 +102,10 @@
             placeholder="Testimonial"
             v-model="user.testimonial"
             @keyup="textCounter"
-            maxlength="200"
+            maxlength="170"
           ></textarea>
           <div class="sub-row">
-            <p class="small">text count: {{ user.testimonial.length }} / 200</p>
+            <p class="small">text count: {{ user.testimonial.length }} / 170</p>
             <button type="submit">Submit Testimonial</button>
           </div>
         </form>
