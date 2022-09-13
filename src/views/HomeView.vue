@@ -169,6 +169,7 @@ import { onMounted } from "vue";
 const siteState = useSiteState();
 onMounted(() => {
   siteState.getTestimonials();
+  siteState.getGigs();
 })
 </script>
 
