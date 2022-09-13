@@ -5,7 +5,7 @@
     :modules="modules"
     class="mySwiper"
   >
-    <swiper-slide>
+    <swiper-slide v-for="item in siteState.testimonials" :key="item.Name">
       <img
         id="testIcon"
         src="../components/icons/testimonial_icon.svg"
@@ -19,9 +19,7 @@
           alt=""
           srcset=""
         />
-        I’ve been into coding and designing since i was 16. I have designed and
-        developed lots of amazing products etc. I’m very much familiar with
-        these tools and many more
+        {{ item.testimonial }}
         <img
           class="quotes"
           src="../components/icons/quotesClose.svg"
@@ -30,91 +28,7 @@
         />
       </p>
       <p id="info">
-        OKEIBUNOR FAVOUR OSEMEDUA <span>Developer @ God Abeg</span>
-      </p>
-    </swiper-slide>
-    <swiper-slide>
-      <img
-        id="testIcon"
-        src="../components/icons/testimonial_icon.svg"
-        alt=""
-        srcset=""
-      />
-      <p id="testimony">
-        <img
-          class="quotes"
-          src="../components/icons/quotesOpen.svg"
-          alt=""
-          srcset=""
-        />
-        I’ve been into coding and designing since i was 16. I have designed and
-        developed lots of amazing products etc. I’m very much familiar with these
-        tools and many more
-        <img
-          class="quotes"
-          src="../components/icons/quotesClose.svg"
-          alt=""
-          srcset=""
-        />
-      </p>
-      <p id="info">
-        OKEIBUNOR FAVOUR OSEMEDUA <span>Developer @ God Abeg</span>
-      </p>
-    </swiper-slide>
-    <swiper-slide>
-      <img
-        id="testIcon"
-        src="../components/icons/testimonial_icon.svg"
-        alt=""
-        srcset=""
-      />
-      <p id="testimony">
-        <img
-          class="quotes"
-          src="../components/icons/quotesOpen.svg"
-          alt=""
-          srcset=""
-        />
-        I’ve been into coding and designing since i was 16. I have designed and
-        developed lots of amazing products etc. I’m very much familiar with these
-        tools and many more
-        <img
-          class="quotes"
-          src="../components/icons/quotesClose.svg"
-          alt=""
-          srcset=""
-        />
-      </p>
-      <p id="info">
-        OKEIBUNOR FAVOUR OSEMEDUA <span>Developer @ God Abeg</span>
-      </p>
-    </swiper-slide>
-    <swiper-slide>
-      <img
-        id="testIcon"
-        src="../components/icons/testimonial_icon.svg"
-        alt=""
-        srcset=""
-      />
-      <p id="testimony">
-        <img
-          class="quotes"
-          src="../components/icons/quotesOpen.svg"
-          alt=""
-          srcset=""
-        />
-        I’ve been into coding and designing since i was 16. I have designed and
-        developed lots of amzing products etc. I’m very much familiar with these
-        tools and many more
-        <img
-          class="quotes"
-          src="../components/icons/quotesClose.svg"
-          alt=""
-          srcset=""
-        />
-      </p>
-      <p id="info">
-        OKEIBUNOR FAVOUR OSEMEDUA <span>Developer @ God Abeg</span>
+        {{ item.Name }} <span>{{ item.position }} @ {{ item.Workplace }}</span>
       </p>
     </swiper-slide>
   </swiper>
@@ -122,9 +36,9 @@
 <script lang="ts">
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { useSiteState } from "@/stores/siteState";
 // Import Swiper styles
 import "swiper/css";
-
 import "swiper/css/effect-cards";
 
 // import "./style.css";
@@ -136,11 +50,15 @@ export default {
     SwiperSlide,
   },
   setup() {
+    const siteState = useSiteState();
+    // onMounted(() => {
+    //   siteState.getTestimonials();
+    // });
     return {
+      siteState,
       modules: [EffectCards],
     };
   },
-  
 };
 </script>
 <style lang="scss" scoped>
@@ -180,7 +98,7 @@ export default {
   text-align: center;
 }
 #info {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   text-align: left;
   font-size: 18px;
   font-weight: Bold;
@@ -190,13 +108,13 @@ export default {
     color: #613aff;
   }
 }
-@media screen and (max-width: 768px){
-  #testimony{
+@media screen and (max-width: 768px) {
+  #testimony {
     font-size: 10px;
   }
-  #info{
+  #info {
     font-size: 12px;
-    span{
+    span {
       font-size: 10px;
     }
   }

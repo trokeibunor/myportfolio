@@ -165,7 +165,11 @@ import ContactSect from "../components/ContactSect.vue";
 import FooterSect from "../components/FooterSect.vue";
 import VueWriter from "vue-writer";
 import { useSiteState } from "@/stores/siteState";
+import { onMounted } from "vue";
 const siteState = useSiteState();
+onMounted(() => {
+  siteState.getTestimonials();
+})
 </script>
 
 <style lang="scss">

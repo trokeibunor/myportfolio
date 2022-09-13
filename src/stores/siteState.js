@@ -31,13 +31,16 @@ export const useSiteState = defineStore({
       this.isDarkMode = !this.isDarkMode;
     },
     async getTestimonials() {
-      const querySnapshot = await getDocs(collection(db, "testimonial"));
+      const querySnapshot = await getDocs(collection(db, "testimonials"));
       this.testimonials = [];
+      console.log("from testimonials");
       querySnapshot.forEach((doc) => {
         const dataObject = doc.data();
+        console.log(dataObject);
         // Actions can mutate state in pinia
         // mutate projects
         this.testimonials.push({ ...dataObject });
+        console.log(this.testimonials);
       });
     },
     async addTestimonial({ name, email, position, workPlace, testimonial }) {
