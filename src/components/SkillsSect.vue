@@ -12,11 +12,6 @@
       >
         <img src="../components/icons/design-icon.svg" alt="" srcset="" />
         <p>DESIGN</p>
-        <!-- <img
-          :src="clickedBox == 'design' ? caratUp : caratDown"
-          alt=""
-          srcset=""
-        /> -->
       </div>
       <div
         id="frontend"
@@ -25,11 +20,6 @@
       >
         <img src="../components/icons/frontend-icon.svg" alt="" srcset="" />
         <p>FRONTEND</p>
-        <!-- <img
-          :src="clickedBox == 'frontend' ? caratUp : caratDown"
-          alt=""
-          srcset=""
-        /> -->
       </div>
       <div
         id="backend"
@@ -38,17 +28,12 @@
       >
         <img src="../components/icons/backend-icon.svg" alt="" srcset="" />
         <p>BACKEND</p>
-        <!-- <img
-          :src="clickedBox == 'backend' ? caratUp : caratDown"
-          alt=""
-          srcset=""
-        /> -->
       </div>
     </div>
     <!-- Skill box -->
     <div class="skill-box">
       <div v-if="clickedBox == 'design'" class="design-box">
-        <ProgressBar title="Figma" width="70" />
+        <ProgressBar title="Figma" width="80" />
         <ProgressBar title="Sketch" width="60" />
         <ProgressBar title="Canva" width="80" />
       </div>
@@ -75,8 +60,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import ProgressBar from "./ProgressBar.vue";
-const caratDown = ref("src/components/icons/carat-down.svg");
-const caratUp = ref("src/components/icons/carat-up.svg");
 const clickedBox = ref("frontend");
 </script>
 
