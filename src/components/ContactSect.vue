@@ -133,7 +133,6 @@ function sendMail(e) {
         font-size: 18px;
         border: none;
         outline: none;
-        color: #fff;
         margin: 0px auto;
       }
       .holder {

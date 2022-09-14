@@ -194,6 +194,7 @@ onMounted(() => {
   }
   form {
     background-color: hsl(0, 0%, 90%);
+    color: $dark_text;
     button {
       p {
         color: #fff;
@@ -229,6 +230,7 @@ onMounted(() => {
     input,
     textarea {
       background-color: $dark-background;
+      color: #fff;
     }
   }
   #whole {
@@ -245,6 +247,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  -webkit-overflow-x: hidden;
 }
 // style scrollbar
 body::-webkit-scrollbar {
