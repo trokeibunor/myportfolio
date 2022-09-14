@@ -16,14 +16,15 @@
       <div class="text-grid">
         <h3>Get to know Emmanuel Okeibunor</h3>
         <p>
-          I’ve been into coding and designing since 2019. I have designed
-          and developed lots of amzing products etc. I'm familiar with technologies
+          I’ve been into coding and designing since 2019. I have designed and
+          developed lots of amazing products etc. I'm familiar with technologies
           required for modern web development
         </p>
         <p>
           I love football, Up Chelsea, lol. I enjoy interesting conversations,
           learning new things, civil debates. I enjoy new challanges. I'm sure
-          I'll enjoy talking with you about your project, well find out more in my CV I guess.
+          I'll enjoy talking with you about your project, well find out more in
+          my CV, or send a message, let's get talking
         </p>
         <!-- mobile Imga -->
         <img
@@ -43,7 +44,12 @@
           <p>Football</p>
           <p>Reading</p>
         </div>
-        <a id="downloadCV" href="https://drive.google.com/file/d/1bgR1SgKj6X9rYQ6weDco6aM_ntmESMLy/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <a
+          id="downloadCV"
+          href="https://drive.google.com/file/d/1bgR1SgKj6X9rYQ6weDco6aM_ntmESMLy/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src="../components/icons/cloud_download.svg" alt="" />
           <span>Download CV</span>
         </a>
@@ -91,7 +97,7 @@
       p {
         margin: 0px;
       }
-      #boy-img-mobile{
+      #boy-img-mobile {
         display: none;
       }
       #sect_title {
@@ -121,31 +127,31 @@
     }
   }
 }
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   // tablet
-  #about{
+  #about {
     margin-top: 3rem;
-    .about-grid{
+    .about-grid {
       margin-top: 2rem;
       align-items: center;
-      .text-grid{
-        h3{
+      .text-grid {
+        h3 {
           font-size: 28px;
         }
-        p{
+        p {
           font-size: 14px;
         }
-        #sect_title{
-          p{
+        #sect_title {
+          p {
             font-size: 14px;
           }
         }
-        .enjoyables{
+        .enjoyables {
           display: grid;
           grid-template-columns: auto auto;
           justify-items: center;
 
-          p{
+          p {
             text-align: center;
             width: 70%;
             font-size: 14px;
@@ -155,53 +161,52 @@
     }
   }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   // Mobile
-  #about{
+  #about {
     width: 85%;
-    .about-grid{
+    .about-grid {
       display: flex;
       flex-direction: column-reverse;
-      .image-holder{
+      .image-holder {
         display: none;
       }
-      .text-grid{
+      .text-grid {
         gap: 8px;
-        h3{
+        h3 {
           font-size: 24px;
           text-align: center;
           margin: 1rem 0px;
         }
-        #boy-img-mobile{
+        #boy-img-mobile {
           display: block;
           height: 30vh;
         }
-        #sect_title{
+        #sect_title {
           margin-top: 0rem;
         }
-        .enjoyables{
-          p{
+        .enjoyables {
+          p {
             font-size: 10px;
           }
         }
-        #downloadCV{
+        #downloadCV {
           margin-top: 1rem;
         }
       }
     }
   }
 }
-@media screen and (max-width: 400px){
-  #about{
-    .title{
-        img{
-          max-width: 160px;
-        }
+@media screen and (max-width: 400px) {
+  #about {
+    .title {
+      img {
+        max-width: 160px;
+      }
     }
-    .about-grid{
-      
-      .text-grid{
-        h3{
+    .about-grid {
+      .text-grid {
+        h3 {
           font-size: 18px;
           margin: 0px 0px;
         }

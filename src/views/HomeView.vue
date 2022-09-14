@@ -38,6 +38,12 @@
         </p>
       </div>
     </div>
+    <div class="Notif emailNotSent" v-show="siteState.emptyForm">
+      <div class="content" @click="siteState.emptyForm = false">
+        <img src="../components/icons/plane_down.svg" alt="" srcset="" />
+        <p>Hey please fill up the form, or use any of the social links</p>
+      </div>
+    </div>
     <!-- ===================================== -->
     <!-- ===================================== -->
     <NavBar />
@@ -52,7 +58,7 @@
           My name is Emmanuel, I'm a
           <span id="fullStack"
             >&#128521;
-            <VueWriter :array="['Fullstack Developer', 'JAMstack Developer']" />
+            <VueWriter :array="['Frontend Developer', 'JAMstack Developer']" />
           </span>
         </h2>
         <p id="desc">
@@ -170,7 +176,7 @@ const siteState = useSiteState();
 onMounted(() => {
   siteState.getTestimonials();
   siteState.getGigs();
-})
+});
 </script>
 
 <style lang="scss">
@@ -316,17 +322,17 @@ body::-webkit-scrollbar-thumb {
 }
 // Notification Styling End
 // Notification styling Responsive
-@media screen and (max-width: 1280px){
-  .Notif{
-    .content{
-      width: 50%
+@media screen and (max-width: 1280px) {
+  .Notif {
+    .content {
+      width: 50%;
     }
   }
 }
-@media screen and (max-width: 768px){
-  .Notif{
-    .content{
-      width: 70%
+@media screen and (max-width: 768px) {
+  .Notif {
+    .content {
+      width: 70%;
     }
   }
 }

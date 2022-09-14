@@ -20,6 +20,7 @@ export const useSiteState = defineStore({
     isProcessing: false,
     emailSent: false,
     emailNotSent: false,
+    emptyForm: false,
     mailData: {
       service_ID: "service_hvwtrwj",
       template_ID: "template_qzibjml",
@@ -137,7 +138,7 @@ export const useSiteState = defineStore({
         }
       } else {
         this.isProcessing = false;
-        this.emailNotSent = true;
+        this.emptyForm = true;
       }
     },
   },
