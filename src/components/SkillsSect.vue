@@ -12,11 +12,11 @@
       >
         <img src="../components/icons/design-icon.svg" alt="" srcset="" />
         <p>DESIGN</p>
-        <img
+        <!-- <img
           :src="clickedBox == 'design' ? caratUp : caratDown"
           alt=""
           srcset=""
-        />
+        /> -->
       </div>
       <div
         id="frontend"
@@ -25,11 +25,11 @@
       >
         <img src="../components/icons/frontend-icon.svg" alt="" srcset="" />
         <p>FRONTEND</p>
-        <img
+        <!-- <img
           :src="clickedBox == 'frontend' ? caratUp : caratDown"
           alt=""
           srcset=""
-        />
+        /> -->
       </div>
       <div
         id="backend"
@@ -38,11 +38,11 @@
       >
         <img src="../components/icons/backend-icon.svg" alt="" srcset="" />
         <p>BACKEND</p>
-        <img
+        <!-- <img
           :src="clickedBox == 'backend' ? caratUp : caratDown"
           alt=""
           srcset=""
-        />
+        /> -->
       </div>
     </div>
     <!-- Skill box -->

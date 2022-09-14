@@ -246,6 +246,7 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0px;
   padding: 0px;
+  width: 100vw;
   overflow-x: hidden;
   -webkit-overflow-x: hidden;
 }
