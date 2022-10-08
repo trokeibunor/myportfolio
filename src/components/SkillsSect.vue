@@ -42,8 +42,9 @@
         <ProgressBar title="CSS, SCSS" width="90" />
         <ProgressBar title="tailwindCSS, Bootstrap" width="80" />
         <ProgressBar title="Javascript" width="90" />
-        <ProgressBar title="React" width="60" />
         <ProgressBar title="Vue" width="90" />
+        <ProgressBar title="Angular" width="80" />
+        <ProgressBar title="React" width="60" />
         <ProgressBar title="AdonisJs" width="50" />
       </div>
       <div v-if="clickedBox == 'backend'" class="backend-box">

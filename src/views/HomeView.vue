@@ -252,7 +252,7 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0px;
   padding: 0px;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   -webkit-overflow-x: hidden;
 }
