@@ -1,5 +1,11 @@
 <template>
-  <div id="works" :class="{'light-mode': !siteState.isDarkMode,'dark-mode': siteState.isDarkMode}">
+  <div
+    id="works"
+    :class="{
+      'light-mode': !siteState.isDarkMode,
+      'dark-mode': siteState.isDarkMode,
+    }"
+  >
     <div class="title">
       <img src="../components/icons/port-divider.svg" alt="" srcset="" />
       <p>WORKS/SERVICES</p>
@@ -9,13 +15,13 @@
     </div>
   </div>
   <!-- Carousel... -->
-  <GigsCarousel/>
+  <GigsCarousel />
 </template>
 
 <script setup lang="ts">
 import GigsCarousel from "./GigsCarousel.vue";
 import { useSiteState } from "@/stores/siteState";
-const siteState = useSiteState()
+const siteState = useSiteState();
 </script>
 
 <style lang="scss" scoped>
@@ -42,18 +48,18 @@ const siteState = useSiteState()
 }
 @media screen and (max-width: 768px) {
   // mobile
-  #works{
+  #works {
     width: 90%;
-    .title{
-      img{
+    .title {
+      img {
         max-width: 150px;
       }
     }
-    .talker{
+    .talker {
       width: 90%;
       margin: 1rem auto;
       text-align: center;
-      h3{
+      h3 {
         font-size: 20px;
       }
     }

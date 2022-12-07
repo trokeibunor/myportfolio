@@ -1,32 +1,101 @@
 <script setup lang="ts">
-  import {ref} from 'vue';
-  import { useSiteState } from '@/stores/siteState';
-  const siteState = useSiteState();
-  const dropDown = ref(false)
+import { ref } from "vue";
+import { useSiteState } from "@/stores/siteState";
+const siteState = useSiteState();
+const dropDown = ref(false);
 </script>
 <template>
-  <nav :class="{'light-mode': !siteState.isDarkMode,'dark-mode': siteState.isDarkMode}">
-    <div  class="nav-content">
-      <img class="logo" v-if="siteState.isDarkMode" src="../components/icons/dark_logo.svg" alt="" srcset="" />
-      <img class= "logo" v-else src="../components/icons/light_logo.svg" alt="" srcset="" />
+  <nav
+    :class="{
+      'light-mode': !siteState.isDarkMode,
+      'dark-mode': siteState.isDarkMode,
+    }"
+  >
+    <div class="nav-content">
+      <img
+        class="logo"
+        v-if="siteState.isDarkMode"
+        src="../components/icons/dark_logo.svg"
+        alt=""
+        srcset=""
+      />
+      <img
+        class="logo"
+        v-else
+        src="../components/icons/light_logo.svg"
+        alt=""
+        srcset=""
+      />
       <div class="nav-link">
         <a href="/#top">Home</a>
         <a href="/#abouts">About</a>
         <a href="/#work">Works</a>
         <a href="/#contact">Contact</a>
-        <img class="switcher" v-if="siteState.isDarkMode" @click="siteState.toggleDarkMode" src="../components/icons/moon_icon.svg" alt="" />
-        <img class="switcher" v-else @click="siteState.toggleDarkMode" src="../components/icons/sun_icon.svg" alt="" />
+        <img
+          class="switcher"
+          v-if="siteState.isDarkMode"
+          @click="siteState.toggleDarkMode"
+          src="../components/icons/moon_icon.svg"
+          alt=""
+        />
+        <img
+          class="switcher"
+          v-else
+          @click="siteState.toggleDarkMode"
+          src="../components/icons/sun_icon.svg"
+          alt=""
+        />
       </div>
       <div class="menu_toggler">
-        <img class="switcher" v-if="siteState.isDarkMode" @click="siteState.toggleDarkMode" src="../components/icons/moon_icon.svg" alt="" />
-        <img class="switcher" v-else @click="siteState.toggleDarkMode" src="../components/icons/sun_icon.svg" alt="" />
-        <template  v-if="siteState.isDarkMode" >
-          <img class="toggler" @click="dropDown = !dropDown" v-if="dropDown == false" src="../components/icons/menu_toggler_dark.svg" alt="" srcset=""/>
-          <img class="toggler" @click="dropDown = !dropDown" v-else src="../components/icons/dark_cancel.svg" alt="" srcset=""/>
+        <img
+          class="switcher"
+          v-if="siteState.isDarkMode"
+          @click="siteState.toggleDarkMode"
+          src="../components/icons/moon_icon.svg"
+          alt=""
+        />
+        <img
+          class="switcher"
+          v-else
+          @click="siteState.toggleDarkMode"
+          src="../components/icons/sun_icon.svg"
+          alt=""
+        />
+        <template v-if="siteState.isDarkMode">
+          <img
+            class="toggler"
+            @click="dropDown = !dropDown"
+            v-if="dropDown == false"
+            src="../components/icons/menu_toggler_dark.svg"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="toggler"
+            @click="dropDown = !dropDown"
+            v-else
+            src="../components/icons/dark_cancel.svg"
+            alt=""
+            srcset=""
+          />
         </template>
         <template v-else>
-          <img class="toggler" @click="dropDown = !dropDown" v-if="dropDown == false" src="../components/icons/menu_toggler_light.svg" alt="" srcset=""/>
-          <img class="toggler" @click="dropDown = !dropDown" v-else src="../components/icons/light_cancel.svg" alt="" srcset=""/>
+          <img
+            class="toggler"
+            @click="dropDown = !dropDown"
+            v-if="dropDown == false"
+            src="../components/icons/menu_toggler_light.svg"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="toggler"
+            @click="dropDown = !dropDown"
+            v-else
+            src="../components/icons/light_cancel.svg"
+            alt=""
+            srcset=""
+          />
         </template>
       </div>
     </div>
@@ -34,35 +103,40 @@
       <!-- Mobile Menu -->
       <div class="mobile-drop" v-if="dropDown">
         <a href="/#top" @click="dropDown = false" class="mobile-nav">Home</a>
-        <a href="/#abouts" @click="dropDown = false" class="mobile-nav">About</a>
-        <a href="/#work"  @click="dropDown = false" class="mobile-nav">Works</a>
-        <a href="/#contact"  @click="dropDown = false" class="mobile-nav">Contact</a>
+        <a href="/#abouts" @click="dropDown = false" class="mobile-nav"
+          >About</a
+        >
+        <a href="/#work" @click="dropDown = false" class="mobile-nav">Works</a>
+        <a href="/#contact" @click="dropDown = false" class="mobile-nav"
+          >Contact</a
+        >
       </div>
     </transition>
   </nav>
 </template>
 <style lang="scss" scoped>
 @import "@/Global_styles/colors.scss";
-.light-mode{
+.light-mode {
   background-color: $light-background;
-  a{
-    color:$dark_text
+  a {
+    color: $dark_text;
   }
-  .mobile-drop{
+  .mobile-drop {
     background-color: hsl(0, 0%, 90%);
   }
 }
-.dark-mode{
+.dark-mode {
   background-color: $dark-background;
-  a{
-    color: $white_text
+  a {
+    color: $white_text;
   }
-  .mobile-drop{
+  .mobile-drop {
     background-color: $alt-dark;
   }
 }
 // animation
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.7s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
@@ -73,7 +147,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
-  
+
   .nav-content {
     width: 80%;
     display: flex;
@@ -99,39 +173,39 @@ nav {
         cursor: pointer;
       }
     }
-    .menu_toggler{
+    .menu_toggler {
       display: none;
     }
   }
-  .mobile-drop{
+  .mobile-drop {
     display: none;
   }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   // mobile
-  nav{
+  nav {
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 10;
     background-color: $dark-background;
-    .nav-content{
+    .nav-content {
       width: 90%;
       padding: 1.5rem 0px;
-      .nav-link{
+      .nav-link {
         display: none;
       }
-      .menu_toggler{
+      .menu_toggler {
         display: flex;
         align-items: center;
         gap: 12px;
-        .toggler{
+        .toggler {
           width: 23px;
           height: 23px;
         }
       }
     }
-    .mobile-drop{
+    .mobile-drop {
       display: flex;
       flex-direction: column;
 
@@ -140,7 +214,7 @@ nav {
       top: 100%;
       z-index: 10;
       padding: 0.5rem 0px;
-      .mobile-nav{
+      .mobile-nav {
         margin: 1.25rem;
         text-decoration: none;
         font-weight: 600;
@@ -148,5 +222,4 @@ nav {
     }
   }
 }
-
 </style>

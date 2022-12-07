@@ -136,12 +136,12 @@ function handleproImgUpload(e) {
   reader.readAsArrayBuffer(file);
   reader.onload = function () {
     Gig.img = reader.result as string;
-    console.log(reader.result)
-    console.log(Gig.img)
-  }
-};
-function submitGig(){
-  siteState.addGigs(Gig)
+    console.log(reader.result);
+    console.log(Gig.img);
+  };
+}
+function submitGig() {
+  siteState.addGigs(Gig);
   Gig.img = "";
   Gig.name = "";
   Gig.gitLink = "";

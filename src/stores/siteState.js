@@ -100,7 +100,7 @@ export const useSiteState = defineStore({
         // Actions can mutate state in pinia
         // mutate projects
         this.gigs.push({ ...dataObject });
-        console.log(this.gigs)
+        console.log(this.gigs);
       });
     },
     async sendMail(subject, message, email, target) {

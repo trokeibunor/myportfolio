@@ -138,7 +138,7 @@ const user = reactive({
   workPlace: "",
   testimonial: "",
 });
-function addTestimonial(){
+function addTestimonial() {
   siteState.addTestimonial(user);
   user.name = "";
   user.email = "";
@@ -287,17 +287,17 @@ function addTestimonial(){
 }
 // Notification Styling End
 // Notification styling Responsive
-@media screen and (max-width: 1280px){
-  .Notif{
-    .content{
-      width: 50%
+@media screen and (max-width: 1280px) {
+  .Notif {
+    .content {
+      width: 50%;
     }
   }
 }
-@media screen and (max-width: 768px){
-  .Notif{
-    .content{
-      width: 70%
+@media screen and (max-width: 768px) {
+  .Notif {
+    .content {
+      width: 70%;
     }
   }
 }

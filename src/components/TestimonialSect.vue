@@ -31,20 +31,20 @@ import TestimonialCarousel from "./TestimonialCarousel.vue";
   }
 }
 
-.card-holder{
+.card-holder {
   width: 80%;
   margin: 0px auto;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   #testimonial {
     width: 90%;
-    .title{
-      img{
+    .title {
+      img {
         max-width: 150px;
       }
     }
   }
-  .card-holder{
+  .card-holder {
     width: 60%;
     margin: 0px auto;
   }

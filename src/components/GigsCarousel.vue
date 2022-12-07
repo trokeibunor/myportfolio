@@ -93,7 +93,7 @@ export default {
   border-radius: 20px;
   text-decoration: none;
   color: #fff;
-  background-color: #4415FF;
+  background-color: #4415ff;
 }
 #code {
   padding: 8px 16px;

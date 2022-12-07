@@ -42,6 +42,7 @@
         <ProgressBar title="CSS, SCSS" width="90" />
         <ProgressBar title="tailwindCSS, Bootstrap" width="80" />
         <ProgressBar title="Javascript" width="90" />
+        <ProgressBar title="Typescript" width="90" />
         <ProgressBar title="Vue" width="90" />
         <ProgressBar title="Angular" width="80" />
         <ProgressBar title="React" width="60" />
@@ -66,7 +67,7 @@ const clickedBox = ref("frontend");
 
 <style lang="scss" scoped>
 // dynamic classes
-.active p{
+.active p {
   color: #4415ff !important;
   font-weight: 600;
 }
@@ -104,30 +105,30 @@ const clickedBox = ref("frontend");
     }
   }
 }
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   // Tablet
-  #skills{
-    .skill-box{
+  #skills {
+    .skill-box {
       width: 75%;
     }
   }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   // mobile
-  #skills{
+  #skills {
     margin-top: 1rem;
     width: 85%;
-    .control-tab{
-      div{
-        img{
+    .control-tab {
+      div {
+        img {
           max-width: 24px;
         }
-        p{
+        p {
           font-size: 10px;
         }
       }
     }
-    .skill-box{
+    .skill-box {
       width: 90%;
       margin: 1rem auto;
     }

@@ -1,5 +1,11 @@
 <template>
-  <div id="achieve" :class="{'light-mode': !siteState.isDarkMode,'dark-mode': siteState.isDarkMode}">
+  <div
+    id="achieve"
+    :class="{
+      'light-mode': !siteState.isDarkMode,
+      'dark-mode': siteState.isDarkMode,
+    }"
+  >
     <div class="title">
       <img src="../components/icons/port-divider.svg" alt="" srcset="" />
       <p>CERTIFICATION/ CAREER HIGHLIGHTS</p>
@@ -91,32 +97,34 @@
 </template>
 
 <script setup lang="ts">
-  import { useSiteState } from '@/stores/siteState';
-  const siteState = useSiteState()
+import { useSiteState } from "@/stores/siteState";
+const siteState = useSiteState();
 </script>
 
 <style lang="scss" scoped>
 @import "@/Global_styles/colors.scss";
-.light-mode{
-  .content{
-    .education-box,.work-box{
+.light-mode {
+  .content {
+    .education-box,
+    .work-box {
       background-color: $alt_light;
     }
   }
-  .see_through{
-    p{
+  .see_through {
+    p {
       border: 1px solid #181c283a;
     }
   }
 }
-.dark-mode{
-  .content{
-    .education-box,.work-box{
+.dark-mode {
+  .content {
+    .education-box,
+    .work-box {
       background-color: $alt_dark;
     }
   }
-  .see_through{
-    p{
+  .see_through {
+    p {
       border: 1px solid $white_text;
     }
   }
@@ -180,34 +188,34 @@
 }
 @media screen and (max-width: 768px) {
   // mobile
-  #achieve{
+  #achieve {
     width: 90%;
-    .title{
-      img{
+    .title {
+      img {
         max-width: 75px;
       }
     }
-    .content{
-      div{
+    .content {
+      div {
         margin: 2rem 0px;
-        img{
+        img {
           width: 60%;
           height: 100px;
         }
-        .info-box{
+        .info-box {
           width: 98%;
           gap: 4px;
-          h5{
+          h5 {
             font-size: 10px;
           }
-          p{
+          p {
             font-size: 8px;
           }
         }
       }
     }
-    .see_through{
-      p{
+    .see_through {
+      p {
         font-size: 8px;
         text-align: center;
         padding: 8px 10px;

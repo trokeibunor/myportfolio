@@ -1,7 +1,7 @@
 import AddTestimonialVue from "@/views/AddTestimonial.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import AddGig from "@/views/AddGig.vue"
+import AddGig from "@/views/AddGig.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,13 +14,13 @@ const router = createRouter({
     {
       path: "/addTestimonial",
       name: "addTestimonial",
-      component: AddTestimonialVue
+      component: AddTestimonialVue,
     },
     {
       path: "/addGig",
       name: "addGig",
-      component: AddGig
-    }
+      component: AddGig,
+    },
   ],
 });
 

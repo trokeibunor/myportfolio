@@ -32,7 +32,7 @@
         </a>
       </div>
       <form @submit.prevent="sendMail">
-        <input type="hidden" name="from_name" v-model="contactForm.email">
+        <input type="hidden" name="from_name" v-model="contactForm.email" />
         <input
           type="text"
           v-model="contactForm.subject"
@@ -76,11 +76,11 @@ function sendMail(e) {
     contactForm.subject,
     contactForm.email,
     contactForm.message,
-    e.target,
+    e.target
   );
   contactForm.subject = "";
   contactForm.email = "";
-  contactForm.message = ""
+  contactForm.message = "";
 }
 </script>
 

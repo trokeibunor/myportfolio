@@ -1,5 +1,11 @@
 <template>
-  <div class="main" :class="{'light-mode': !siteState.isDarkMode,'dark-mode': siteState.isDarkMode}">
+  <div
+    class="main"
+    :class="{
+      'light-mode': !siteState.isDarkMode,
+      'dark-mode': siteState.isDarkMode,
+    }"
+  >
     <div class="content">
       <div class="name">{{ props.title }}</div>
       <div class="bottom">
@@ -14,29 +20,29 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useSiteState } from "@/stores/siteState";
-const siteState = useSiteState()
+const siteState = useSiteState();
 const props = defineProps(["title", "width"]);
 const width = ref(`width: ${props.width}%`);
 </script>
 <style lang="scss" scoped>
 @import "@/Global_styles/colors.scss";
-.light-mode{
+.light-mode {
   border: 1px solid #181c283a;
-  .content{
-    .name{
-      color: $dark_text
+  .content {
+    .name {
+      color: $dark_text;
     }
-    .progress-bar{
+    .progress-bar {
       background-color: $alt_light;
     }
   }
 }
-.dark-mode{
+.dark-mode {
   border: 1px solid $white_text;
-  .content{
-    .progress-bar{
-    background-color: $alt_dark;
-  }
+  .content {
+    .progress-bar {
+      background-color: $alt_dark;
+    }
   }
 }
 .main {
@@ -63,23 +69,23 @@ const width = ref(`width: ${props.width}%`);
     }
   }
 }
-@media screen and (max-width: 768px){
-  .main{
+@media screen and (max-width: 768px) {
+  .main {
     padding: 0.5rem 0px;
-    .content{
-      .name{
+    .content {
+      .name {
         font-size: 12px;
       }
-      .bottom{
+      .bottom {
         gap: 6px;
       }
-      .progress-bar{
+      .progress-bar {
         height: 6px;
-        .progress{
+        .progress {
           height: 6px;
         }
       }
-      p{
+      p {
         font-size: 12px;
       }
     }
