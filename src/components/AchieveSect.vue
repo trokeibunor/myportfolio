@@ -14,7 +14,7 @@
       <div class="education-box">
         <img src="../components/icons/education-icon.svg" alt="" srcset="" />
         <div class="info-box">
-          <h5>B.Eng Petroleum Engineering(in view)</h5>
+          <h5>B.Eng Petroleum Engineering</h5>
           <p>University of Benin</p>
           <p>2017 - 2022</p>
         </div>
@@ -52,6 +52,21 @@
       <div class="work-box">
         <img src="../components/icons/work_icon.svg" alt="" srcset="" />
         <div class="info-box">
+          <h5>Pertinence, Lead Frontend Developer</h5>
+          <p>Lagos,Nigeria</p>
+          <p>2023</p>
+        </div>
+        <div class="info-box">
+          <h5>Rhapid.co, Lead Tech</h5>
+          <p>Edo State,Nigeria</p>
+          <p>2023</p>
+        </div>
+        <div class="info-box">
+          <h5>Adolore Enterprise, Lead Frontend Engineer</h5>
+          <p>Edo State,Nigeria</p>
+          <p>2022</p>
+        </div>
+        <div class="info-box">
           <h5>NPDC Benin, Reservoir Engineering(internship)</h5>
           <p>Edo State,Nigeria</p>
           <p>2022</p>
@@ -78,11 +93,6 @@
         </div>
         <div class="info-box">
           <h5>Asseter, crypto services, Web developer/designer</h5>
-          <p>Remote (FreeLance Role)</p>
-          <p>2022</p>
-        </div>
-        <div class="info-box">
-          <h5>Grid Crypto, crypto services, Web designer</h5>
           <p>Remote (FreeLance Role)</p>
           <p>2022</p>
         </div>
