@@ -68,7 +68,7 @@
         <div class="btn-row">
           <a
             id="downloadCV"
-            href="https://drive.google.com/file/d/1FzyfBBIxK12F1Li8St98dI5tza7b8bVs/view?usp=sharing"
+            href="https://drive.google.com/file/d/1TMP6REA-TnX_lBSHc9W09M7leNSBfNFX/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
